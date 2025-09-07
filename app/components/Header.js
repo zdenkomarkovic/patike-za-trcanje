@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SITE_CONFIG } from "@/app/constants/site";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,24 +10,43 @@ export default function Header() {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
+  const [scrolled, setScrolled] = useState(false);
 
+  useEffect(() => {
+    const HandleScroll = () => {
+      if (window.scrollY > 0) setScrolled(true);
+      else setScrolled(false);
+    };
+
+    document.addEventListener("scroll", HandleScroll);
+
+    return () => {
+      document.removeEventListener("scroll", HandleScroll);
+    };
+  }, []);
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50">
+    <header
+      className={` shadow-lg sticky top-0 z-50 ${
+        scrolled
+          ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-md text-primary"
+          : "bg-transparent text-white"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-2">
           <Link href={"/"} className="flex items-center gap-3">
             <Image
-              src={"/android-chrome-512x512.png"}
+              src={"/logo.jpg"}
               width={60}
               height={60}
-              alt="auto hemija"
+              alt="patike za trcanje"
               className=""
             />
             <div>
               <p className={`font-bold text-gray-900 text-xl  leading-tight`}>
-                RRcustomsserbia
+                Saucony Shop
               </p>
-              <p className="text-base text-gray-600">Auto-hemija</p>
+              <p className="text-base text-gray-600">Sreten Spasic</p>
             </div>
           </Link>
           {/* Desktop Navigation */}
