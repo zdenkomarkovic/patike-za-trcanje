@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title:
-    "RRcustomsserbia - Profesionalna Auto-hemija | Šamponi, Voskovi, Detailing",
+    "Saucony Shop - Patike za trčanje | Sreten Spasić",
   description:
-    "Profesionalna auto-hemija u Zrenjaninu. Auto šamponi za pranje, voskovi za zaštitu, sredstva za poliranje i detailing proizvodi. Perionica Čepac - kvalitet i tradicija.",
+    "Profesionalne patike za trčanje Saucony brenda. Za početnike, rekreativce i napredne trkače. Kvalitet i tradicija od 1898. godine.",
   icons: {
     icon: "/android-chrome-192x192.png",
     apple: "/apple-touch-icon.png",

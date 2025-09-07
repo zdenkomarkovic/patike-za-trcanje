@@ -12,22 +12,21 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <Image
-                src={"/android-chrome-512x512.png"}
+                src={"/logo.jpg"}
                 width={60}
                 height={60}
-                alt="auto hemija"
+                alt="patike za trcanje"
                 className=""
               />
               <div>
                 <p className={`font-bold text-white text-xl  leading-tight`}>
-                  RRcustomsserbia
+                  Saucony Shop
                 </p>
-                <p className="text-base text-gray-300">Auto-hemija</p>
+                <p className="text-base text-gray-300">Sreten Spasić</p>
               </div>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
-              Dugogodišnja porodična perionica poznata po kvalitetnom pranju i
-              održavanju vozila. Sada i prodaja profesionalne auto-hemije.
+              Profesionalne patike za trčanje Saucony brenda. Za početnike, rekreativce i napredne trkače. Kvalitet i tradicija od 1898. godine.
             </p>
             <div className="flex space-x-4">
               <a
@@ -149,7 +148,7 @@ export default function Footer() {
             </p>
             <div className="flex flex-col md:flex-row items-center gap-4 mt-4 md:mt-0">
               <p className="text-gray-400 text-sm">
-                Profesionalna auto-hemija • {SITE_CONFIG.company.location}
+                Profesionalne patike za trčanje • {SITE_CONFIG.company.location}
               </p>
               <p className="text-gray-400 text-sm">
                 Izrada web sajta{" "}
