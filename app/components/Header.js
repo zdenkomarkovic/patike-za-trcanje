@@ -27,7 +27,7 @@ export default function Header() {
       document.removeEventListener("scroll", HandleScroll);
     };
   }, []);
-  return (
+
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -40,8 +40,10 @@ export default function Header() {
 
     fetchCategories();
   }, []);
+
+  return (
     <header
-      className={` shadow-lg sticky top-0 z-50 ${
+      className={`shadow-lg sticky top-0 z-50 ${
         scrolled
           ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-md text-primary"
           : "bg-transparent text-white"
@@ -58,12 +60,13 @@ export default function Header() {
               className=""
             />
             <div>
-              <p className={`font-bold text-gray-900 text-xl  leading-tight`}>
+              <p className={`font-bold text-gray-900 text-xl leading-tight`}>
                 Saucony Shop
               </p>
               <p className="text-base text-gray-600">Sreten Spasic</p>
             </div>
           </Link>
+          
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex space-x-6">
             {SITE_CONFIG.navigation.main.map((item) => (
