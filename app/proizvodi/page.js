@@ -115,7 +115,8 @@ export default function ProductsPage() {
                 </div>
 
                 <Button variant="primary" size="lg" className="mt-6">
-                  Pogledaj modele
+                <Button variant="primary" size="lg" className="mt-6" href="/kategorije">
+                  Pogledaj kategorije
                 </Button>
               </div>
 

@@ -10,12 +10,12 @@ export default function CTASection({
 }) {
   const defaultPrimaryAction = {
     text: `Pozovite nas: ${SITE_CONFIG.company.phone}`,
-    onClick: () => window.location.href = `tel:${SITE_CONFIG.company.phone.replace(/\s/g, '')}`
+    href: `tel:${SITE_CONFIG.company.phone.replace(/\s/g, '')}`
   };
 
   const defaultSecondaryAction = {
     text: "Pošaljite email",
-    onClick: () => window.location.href = `mailto:${SITE_CONFIG.company.email}`
+    href: `mailto:${SITE_CONFIG.company.email}`
   };
 
   return (
@@ -31,7 +31,7 @@ export default function CTASection({
           <Button 
             variant="secondary" 
             size="lg"
-            onClick={(primaryAction || defaultPrimaryAction).onClick}
+            href={(primaryAction || defaultPrimaryAction).href}
           >
             {(primaryAction || defaultPrimaryAction).text}
           </Button>
@@ -39,7 +39,7 @@ export default function CTASection({
             variant="ghost" 
             size="lg" 
             className="border-2 border-white/30 hover:border-white"
-            onClick={(secondaryAction || defaultSecondaryAction).onClick}
+            href={(secondaryAction || defaultSecondaryAction).href}
           >
             {(secondaryAction || defaultSecondaryAction).text}
           </Button>

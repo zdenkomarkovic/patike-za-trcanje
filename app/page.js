@@ -12,11 +12,11 @@ export default function HomePage() {
     description: "Profesionalne patike za trčanje za početnike, rekreativce i napredne trkače. Saucony - jedan od najstarijih sportskih brendova na svetu.",
     primaryAction: {
       text: "Pogledaj proizvode",
-      onClick: () => window.location.href = '/proizvodi'
+      href: '/proizvodi'
     },
     secondaryAction: {
       text: "O brendu Saucony",
-      onClick: () => window.location.href = '/o-brendu'
+      href: '/o-brendu'
     },
     image: {
       src: "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg",

@@ -39,7 +39,7 @@ export default function HeroSection({
                 variant="secondary" 
                 size="lg"
                 className="group"
-                onClick={primaryAction.onClick}
+                href={primaryAction.href}
               >
                 {primaryAction.text}
                 <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -52,7 +52,7 @@ export default function HeroSection({
                 variant="ghost" 
                 size="lg"
                 className="border-2 border-white/30 hover:border-white"
-                onClick={secondaryAction.onClick}
+                href={secondaryAction.href}
               >
                 {secondaryAction.text}
               </Button>

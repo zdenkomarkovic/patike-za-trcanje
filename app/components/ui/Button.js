@@ -1,5 +1,7 @@
 import { cn } from '@/app/lib/utils';
 
+import { cn } from '@/app/lib/utils';
+
 const buttonVariants = {
   primary: 'bg-gradient-to-r from-blue-600 to-red-600 text-white hover:opacity-90',
   secondary: 'border-2 border-white text-white hover:bg-white hover:text-blue-600',
@@ -18,8 +20,26 @@ export default function Button({
   variant = 'primary', 
   size = 'md', 
   className = '', 
+  href,
   ...props 
 }) {
+  if (href) {
+    return (
+      <a
+        href={href}
+        className={cn(
+          'font-semibold rounded-lg transition-all duration-200 flex items-center justify-center inline-block text-center',
+          buttonVariants[variant],
+          buttonSizes[size],
+          className
+        )}
+        {...props}
+      >
+        {children}
+      </a>
+    );
+  }
+
   return (
     <button
       className={cn(

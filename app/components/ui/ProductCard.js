@@ -6,16 +6,9 @@ import Button from './Button';
 export default function ProductCard({ 
   product,
   className = '',
-  onViewDetails,
   ...props 
 }) {
-  const handleViewDetails = () => {
-    if (onViewDetails) {
-      onViewDetails(product);
-    } else if (product.slug?.current) {
-      window.location.href = `/proizvodi/${product.slug.current}`;
-    }
-  };
+  const detailsHref = product.slug?.current ? `/proizvodi/${product.slug.current}` : '#';
 
   return (
     <Card className={cn('overflow-hidden group', className)} {...props}>
@@ -74,7 +67,7 @@ export default function ProductCard({
         <Button 
           variant="primary" 
           className="w-full"
-          onClick={handleViewDetails}
+          href={detailsHref}
         >
           Pogledaj detalje
         </Button>
