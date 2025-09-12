@@ -151,7 +151,7 @@ const BestShoesSection = () => {
           vaše trčanje odmah postaje prijatnije – bez obzira na kategoriju ili
           tip modela.
         </p>
-        <p className="font-bold">Šta uopšte znači „maksimalni jastučić"?</p>
+        <p className="font-bold">Šta uopšte znači &quot;maksimalni jastučić&quot;?</p>
         <p>
           Većina modela koje ćete videti u nastavku spada u kategoriju sa
           maksimalnim jastučićem. To u praksi znači da patika ima najveći

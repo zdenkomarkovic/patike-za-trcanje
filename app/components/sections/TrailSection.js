@@ -11,7 +11,7 @@ const TrailSection = () => {
       title: "Kako izabrati prve trail patike?",
       content: (
         <p className="text-lg leading-tight md:mt-14">
-          Ako tek ulazite u svet traila, univerzalne „all terrain" patike mogu biti odličan izbor. One nisu namenjene za najzahtevnije staze, ali su dobre za upoznavanje terena i prve kilometre van asfalta. Kada osetite draž planinskih staza, prirodnih mirisa i svežeg vazduha, verovatno ćete želeti specijalizovaniji model.
+            Ako tek ulazite u svet traila, univerzalne &quot;all terrain&quot; patike mogu biti odličan izbor. One nisu namenjene za najzahtevnije staze, ali su dobre za upoznavanje terena i prve kilometre van asfalta. Kada osetite draž planinskih staza, prirodnih mirisa i svežeg vazduha, verovatno ćete želeti specijalizovaniji model.
         </p>
       )
     },
@@ -54,7 +54,7 @@ const TrailSection = () => {
             </li>
             <li className="flex items-start">
               <span className=" font-bold mr-2">•</span>
-              <span><span className="font-bold">Salomon</span> – uglavnom „true to size".</span>
+              <span><span className="font-bold">Salomon</span> – uglavnom &quot;true to size&quot;.</span>
             </li>
           </ul>
           <p className="text-lg leading-tight">
@@ -144,7 +144,7 @@ const TrailSection = () => {
                 <span className="font-bold">Elementi stabilizacije</span> – plastični ulošci u đonu koji smanjuju uvrtanje patike.
               </li>
               <li className="">
-                <span className="font-bold">Povišeni bočni delovi đona</span> – deluju kao „blatobrani" i sprečavaju ulazak blata i vode.
+                <span className="font-bold">Povišeni bočni delovi đona</span> – deluju kao &quot;blatobrani&quot; i sprečavaju ulazak blata i vode.
               </li>
               <li className="">
               
@@ -176,7 +176,7 @@ const TrailSection = () => {
           {/* Poslednje 6 kartica u grid-cols-3 */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {trailCards.map((card) => (
-              <motion.div
+              <motion.div key={card.id}
               initial={{ opacity: 0, y: 50, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, amount: 0.1 }}

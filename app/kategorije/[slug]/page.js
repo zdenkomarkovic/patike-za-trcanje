@@ -133,8 +133,8 @@ export default async function CategoryPage({ params }) {
                   Nema proizvoda u ovoj kategoriji
                 </h3>
                 <p className="text-gray-600 mb-8">
-                  Trenutno nema dostupnih proizvoda u kategoriji "
-                  {category.name}".
+                  Trenutno nema dostupnih proizvoda u kategoriji &quot;
+                  {category.name}&quot;.
                 </p>
                 <Link
                   className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
