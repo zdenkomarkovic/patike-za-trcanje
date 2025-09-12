@@ -26,7 +26,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
-              Profesionalne patike za trčanje Saucony brenda. Za početnike, rekreativce i napredne trkače. Kvalitet i tradicija od 1898. godine.
+              Profesionalne patike za trčanje Saucony Shop. Za početnike, rekreativce i napredne trkače. Kvalitet i tradicija vec dugi niz godine.
             </p>
             <div className="flex space-x-4">
               <a

@@ -83,10 +83,7 @@ export default function Header() {
               </Link>
             ))}
 
-            <Link href="/blog" className=" relative group">
-              Blog
-              <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-[#f75760] to-[#954ffd]  transition-all duration-200 group-hover:w-full"></span>
-            </Link>
+          
             <Link href="/kontakt" className=" relative group">
               Kontakt
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-[#f75760] to-[#954ffd]  transition-all duration-200 group-hover:w-full"></span>

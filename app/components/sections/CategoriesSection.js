@@ -4,7 +4,7 @@ import CategoryCard from "../ui/CategoryCard";
 
 export default function CategoriesSection({ categories }) {
   return (
-    <div className="container px-2 md:px-10 mx-auto py-8 md:py-16">
+    <div id="kategorije" className="container px-2 md:px-10 mx-auto py-8 md:py-16">
       <SectionHeader
         title="Kategorije patika"
         description="Pronađite savršene patike za vaš stil trčanja i nivo iskustva"
