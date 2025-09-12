@@ -1,40 +1,42 @@
-import { SITE_CONFIG } from './constants/site';
-import HeroSection from './components/sections/HeroSection';
-import CategoriesSection from './components/sections/CategoriesSection';
-import AboutSection from './components/sections/AboutSection';
-import FeaturesSection from './components/sections/FeaturesSection';
-import CTASection from './components/sections/CTASection';
+﻿import HeroSection from "./components/sections/HeroSection";
+import CategoriesSection from "./components/sections/CategoriesSection";
+import AboutSection from "./components/sections/AboutSection";
+import FeaturesSection from "./components/sections/FeaturesSection";
+import CTASection from "./components/sections/CTASection";
+import { getCategories } from "../sanity/lib/data";
+import TrailSection from "./components/sections/TrailSection";
+import BestShoesSection from "./components/sections/BestShoesSection";
+import Runners from "./components/sections/Runners";
 
-export default function HomePage() {
+export default async function HomePage() {
+  // Dohvatanje kategorija iz Sanity CMS-a
+  const categories = await getCategories();
+
   const heroData = {
     title: "Saucony Shop",
     subtitle: "Patike za trčanje",
-    description: "Profesionalne patike za trčanje za početnike, rekreativce i napredne trkače. Saucony - jedan od najstarijih sportskih brendova na svetu.",
+    description:
+      "Profesionalne patike za trčanje za početnike, rekreativce i napredne trkače.",
     primaryAction: {
       text: "Pogledaj proizvode",
-      href: '/proizvodi'
-    },
-    secondaryAction: {
-      text: "O brendu Saucony",
-      href: '/o-brendu'
+      href: "/proizvodi",
     },
     image: {
-      src: "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg",
-      alt: "Saucony patike za trčanje"
+      src: "/hero.jpg",
+      alt: "Saucony patike za trčanje",
     },
-    stats: [
-      { value: "125+", label: "Godina tradicije" },
-      { value: "1898", label: "Godina osnivanja" }
-    ]
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="">
       <HeroSection {...heroData} />
-      <CategoriesSection categories={SITE_CONFIG.categories} />
-      <AboutSection />
-      <FeaturesSection />
+      <CategoriesSection categories={categories} />
       <CTASection />
+      <FeaturesSection />
+      <Runners />
+      <TrailSection />
+      <AboutSection />
+      <BestShoesSection />
     </div>
   );
 }

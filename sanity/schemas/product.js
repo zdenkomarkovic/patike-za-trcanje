@@ -62,25 +62,29 @@ export default {
     },
     {
       name: 'images',
-      title: 'Slike proizvoda',
+      title: 'Dodatne slike',
       type: 'array',
       of: [
         {
           type: 'image',
           options: {
-            hotspot: true,
+            hotspot: true
           },
           fields: [
             {
               name: 'alt',
-              title: 'Alt tekst',
               type: 'string',
+              title: 'Alt tekst',
+              description: 'Važno za SEO i pristupačnost'
             }
           ]
         }
       ],
-      validation: Rule => Rule.min(1).error('Dodajte najmanje jednu sliku')
+      options: {
+        layout: 'grid'
+      }
     },
+    
     {
       name: 'price',
       title: 'Cena',

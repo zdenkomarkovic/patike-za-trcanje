@@ -14,8 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title:
-    "Saucony Shop - Patike za trčanje | Sreten Spasić",
+  title: "Saucony Shop - Patike za trčanje | Sreten Spasić",
   description:
     "Profesionalne patike za trčanje Saucony brenda. Za početnike, rekreativce i napredne trkače. Kvalitet i tradicija od 1898. godine.",
   icons: {
@@ -28,7 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased text-lg md:text-xl `}
       >
         <Header />
         {children}

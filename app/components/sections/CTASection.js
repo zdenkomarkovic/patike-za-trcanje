@@ -3,7 +3,7 @@ import Section from '../ui/Section';
 import Button from '../ui/Button';
 
 export default function CTASection({ 
-  title = "Spremni za vaše prvo trčanje?",
+  title = "Potrebne su vam patike za trčanje?",
   description = "Kontaktirajte nas za savet o izboru pravih patika za vaš stil trčanja",
   primaryAction,
   secondaryAction
@@ -19,12 +19,12 @@ export default function CTASection({
   };
 
   return (
-    <Section background="gradient" className="text-center">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+    <Section  className="text-center bg-gradient-to-br from-[#f75760] to-[#954ffd]">
+      <div className="max-w-4xl text-white mx-auto">
+        <h2 className="text-3xl  lg:text-4xl font-bold mb-6">
           {title}
         </h2>
-        <p className="text-xl mb-8 text-blue-100">
+        <p className="text-xl mb-8 ">
           {description}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -33,7 +33,7 @@ export default function Header() {
         const categoriesData = await client.fetch(categoriesQuery);
         setCategories(categoriesData);
       } catch (error) {
-        console.error('Error fetching categories:', error);
+        console.error("Error fetching categories:", error);
       }
     };
 
@@ -42,7 +42,7 @@ export default function Header() {
 
   return (
     <header
-      className={`shadow-lg sticky top-0 z-50 ${
+      className={` fixed top-0 z-50 w-full ${
         scrolled
           ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-md text-primary"
           : "bg-transparent text-white"
@@ -59,41 +59,37 @@ export default function Header() {
               className=""
             />
             <div>
-              <p className={`font-bold text-gray-900 text-xl leading-tight`}>
-                Saucony Shop
-              </p>
-              <p className="text-base text-gray-600">Sreten Spasic</p>
+              <p className={`font-bold text-xl leading-tight`}>Saucony Shop</p>
+              <p className="text-base text-gray-100">Sreten Spasic</p>
             </div>
           </Link>
-          
+
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex space-x-6">
-            <Link
-              href="/"
-              className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group"
-            >
+          <nav className="hidden lg:flex space-x-6 font-bold">
+            <Link href="/" className=" relative group">
               Početna
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-[#f75760] to-[#954ffd]  transition-all duration-200 group-hover:w-full"></span>
             </Link>
-            
+
             {/* Categories from Sanity */}
             {categories.map((category) => (
               <Link
                 key={category._id}
                 href={`/kategorije/${category.slug.current}`}
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group"
+                className=" relative group"
               >
                 {category.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-[#f75760] to-[#954ffd]  transition-all duration-200 group-hover:w-full"></span>
               </Link>
             ))}
-            
-            <Link
-              href="/kontakt"
-              className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group"
-            >
+
+            <Link href="/blog" className=" relative group">
+              Blog
+              <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-[#f75760] to-[#954ffd]  transition-all duration-200 group-hover:w-full"></span>
+            </Link>
+            <Link href="/kontakt" className=" relative group">
               Kontakt
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-[#f75760] to-[#954ffd]  transition-all duration-200 group-hover:w-full"></span>
             </Link>
           </nav>
 
@@ -141,7 +137,7 @@ export default function Header() {
               >
                 Početna
               </Link>
-              
+
               {/* Categories from Sanity */}
               {categories.map((category) => (
                 <Link
@@ -153,7 +149,7 @@ export default function Header() {
                   {category.name}
                 </Link>
               ))}
-              
+
               <Link
                 href="/kontakt"
                 onClick={closeMenu}

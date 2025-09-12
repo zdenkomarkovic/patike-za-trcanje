@@ -11,7 +11,7 @@ export default function FeaturesSection() {
         </svg>
       ),
       title: "Za sve nivoe",
-      description: "Od početnika do profesionalnih trkača - imamo patike za svaki nivo iskustva i stil trčanja.",
+      description: "Od početnika do profesionalnih trkača - imamo patike svih brendova za svaki nivo iskustva i stil trčanja.",
       iconColor: "blue"
     },
     {
@@ -20,8 +20,8 @@ export default function FeaturesSection() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
-      title: "Dokazana kvalitet",
-      description: "125+ godina iskustva u proizvodnji patika za trčanje. Prepoznat od strane Runners World magazina.",
+      title: "Pruzamo najbolje",
+      description: "Dugogodisnje iskustvo u prodaji a pre svega u trcanju nas izdvaja kao kompetentne za davanje saveta u kupovini patika za trcanje.",
       iconColor: "red"
     },
     {
@@ -30,17 +30,17 @@ export default function FeaturesSection() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
         </svg>
       ),
-      title: "Udobnost",
-      description: "Napredne tehnologije amortizacije i materijali koji pružaju maksimalnu udobnost tokom trčanja.",
+      title: "Raznovrsnost",
+      description: "Kod nas mozete naci najtrazenije i najkvalitetnije patike svih brendova sa naprednim tehnologijama amortizacije za maksimalnu udobnost tokom trčanja.",
       iconColor: "green"
     }
   ];
 
-  return (
-    <Section background="gray">
+  return ( <div className="bg-gradient-to-br from-gray-200 to-white py-8 md:py-16">
+    <div className="container mx-auto px-2 md:px-10">
       <SectionHeader
-        title="Zašto izabrati Saucony?"
-        description="Ključne karakteristike koje čine Saucony patike posebnima"
+        title="Zašto izabrati Saucony Shop?"
+        description="Dugogodisnje iskustvo u prodaji a jos duze u trcanju"
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -48,6 +48,7 @@ export default function FeaturesSection() {
           <FeatureCard key={index} {...feature} />
         ))}
       </div>
-    </Section>
+    </div>
+    </div>
   );
 }
