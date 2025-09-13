@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <div className=" bg-white">
+    <div className="bg-gradient-to-br from-[#e6e0f8] to-white">
       <div className="container px-2 md:px-10 mx-auto py-8 md:py-16">
         <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 md:mb-10 text-center">
           Saucony – istorija jednog od najstarijih sportskih brendova
@@ -31,11 +31,16 @@ export default function AboutSection() {
                 modelima i stalnom ulaganju u tehnologiju.
               </p>
 
-<Image src="/logo.svg" alt="Saucony Logo" width={1000} height={1000} className="w-full h-full mt-14" />
-         
+              <Image
+                src="/logo.svg"
+                alt="Saucony Logo"
+                width={1000}
+                height={1000}
+                className="w-full h-full mt-14"
+              />
             </div>
           </div>
-          <div className="relative p-4 md:p-6 bg-gray-100 rounded-2xl ">
+          <div className="relative p-4 md:p-6 bg-white rounded-2xl ">
             <ul className=" text-base relative z-20 ">
               <li className="font-bold">
                 Ključni trenuci iz istorije Saucony-ja
@@ -99,32 +104,33 @@ export default function AboutSection() {
             </ul>
           </div>
         </div>
-        <div className="space-y-4  text-gray-600 leading-relaxed mt-10">    
-           <p>
-                Pored profesionalnih{" "}
-                <span className="font-bold">trkačkih patika</span>, Saucony je
-                razvio i liniju
-                <span className="font-bold">retro modela – Originals</span>,
-                koje su postale pravi modni hit. Posebno u zemljama poput
-                Italije i Španije, gde se godišnje proda više od milion pari
-                ovih patika. Kod nas je brend još uvek u fazi razvoja, ali
-                interesovanje raste iz godine u godinu.
-              </p>
-        <p>
-          Danas se Saucony nalazi u vrhu liste kada je reč o{" "}
-          <span className="font-bold">najboljim patikama za trčanje</span>.
-          Njihovi modeli kombinuju inovativne pene, naprednu tehnologiju
-          amortizacije i dizajn prilagođen profesionalnim sportistima i
-          rekreativcima.
-        </p>
-        <p>
-          Saucony je brend koji više od{" "}
-          <span className="font-bold">120 godina oblikuje svet trčanja</span>.
-          Od malog proizvođača u Pensilvaniji, do globalnog lidera u inovacijama
-          i udobnosti, ostao je veran svojoj misiji – da svakom trkaču ponudi
-          patike koje će unaprediti njegovu formu i iskustvo na stazi.
-        </p>
-      </div>
+        <div className="space-y-4  text-gray-600 leading-relaxed mt-10">
+          <p>
+            Pored profesionalnih{" "}
+            <span className="font-bold">trkačkih patika</span>, Saucony je
+            razvio i liniju
+            <span className="font-bold"> retro modela – Originals</span>, koje
+            su postale pravi modni hit. Posebno u zemljama poput Italije i
+            Španije, gde se godišnje proda više od milion pari ovih patika. Kod
+            nas je brend još uvek u fazi razvoja, ali interesovanje raste iz
+            godine u godinu.
+          </p>
+          <p>
+            Danas se Saucony nalazi u vrhu liste kada je reč o{" "}
+            <span className="font-bold">najboljim patikama za trčanje</span>.
+            Njihovi modeli kombinuju inovativne pene, naprednu tehnologiju
+            amortizacije i dizajn prilagođen profesionalnim sportistima i
+            rekreativcima.
+          </p>
+          <p>
+            Saucony je brend koji više od{" "}
+            <span className="font-bold">120 godina oblikuje svet trčanja</span>.
+            Od malog proizvođača u Pensilvaniji, do globalnog lidera u
+            inovacijama i udobnosti, ostao je veran svojoj misiji – da svakom
+            trkaču ponudi patike koje će unaprediti njegovu formu i iskustvo na
+            stazi.
+          </p>
+        </div>
       </div>
     </div>
   );

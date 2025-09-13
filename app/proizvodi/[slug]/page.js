@@ -1,14 +1,15 @@
-import { notFound } from 'next/navigation';
-import Image from 'next/image';
-import Link from 'next/link';
-import { getImageUrl } from '@/sanity/lib/image';
-import { client } from '@/sanity/lib/client';
-import ImageGallery from '@/app/components/ImageGalery';
+import { notFound } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import { getImageUrl } from "@/sanity/lib/image";
+import { client } from "@/sanity/lib/client";
+import ImageGallery from "@/app/components/ImageGalery";
 
 export default async function ProductPage({ params }) {
-    const { slug } = await params;
+  const { slug } = await params;
 
-    const product = await client.fetch(`
+  const product = await client.fetch(
+    `
         *[_type == "product" && slug.current == $slug][0] {
           _id,
           name,
@@ -31,14 +32,18 @@ export default async function ProductPage({ params }) {
           colors,
           longDescription
         }
-    `, { slug: slug });
+    `,
+    { slug: slug }
+  );
 
   if (!product) {
     notFound();
   }
 
-  const mainImageUrl = product.image?.asset ? getImageUrl(product.image, 800) : product.image?.src || product.image;
-  
+  const mainImageUrl = product.image?.asset
+    ? getImageUrl(product.image, 800)
+    : product.image?.src || product.image;
+
   // Dodatne slike
   const additionalImages = product.images || [];
   const allImages = product.images || [];
@@ -46,10 +51,9 @@ export default async function ProductPage({ params }) {
   return (
     <div className="min-h-screen bg-gray-500 pt-20">
       {/* Proizvod detalji */}
-      <div className="bg-gray-100 h-full">
+      <div className="bg-gradient-to-br from-[#e6e0f8] to-white h-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            
             {/* Informacije - PRIKAZUJE SE PRVO NA MOBILNOM */}
             <div className="space-y-10 text-center order-1 lg:order-2">
               <div>
@@ -57,7 +61,7 @@ export default async function ProductPage({ params }) {
                   {product.name}
                 </h1>
                 {product.category && (
-                  <Link 
+                  <Link
                     href={`/kategorije/${product.category.slug.current}`}
                     className="text-blue-600 hover:text-blue-800 font-medium"
                   >
@@ -122,7 +126,10 @@ export default async function ProductPage({ params }) {
 
             {/* Galerija slika - PRIKAZUJE SE DRUGO NA MOBILNOM */}
             <div className="order-2 lg:order-1">
-              <ImageGallery images={product.images} productName={product.name} />
+              <ImageGallery
+                images={product.images}
+                productName={product.name}
+              />
             </div>
           </div>
         </div>
@@ -144,6 +151,6 @@ export async function generateStaticParams() {
 }
 
 export const metadata = {
-  title: 'Proizvod - Saucony Shop',
-  description: 'Detaljne informacije o proizvodu',
+  title: "Proizvod - Saucony Shop",
+  description: "Detaljne informacije o proizvodu",
 };

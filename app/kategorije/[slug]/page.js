@@ -8,6 +8,7 @@ import Button from "@/app/components/ui/Button";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import CTASection from "@/app/components/sections/CTASection";
 
 export default async function CategoryPage({ params }) {
   const { slug } = await params;
@@ -25,19 +26,24 @@ export default async function CategoryPage({ params }) {
     });
 
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen ">
         <section className="h-[70dvh] relative">
-          <Image src={getImageUrl(category.image)} fill alt={category.image.alt || category.name} className="absolute inset-0 object-cover w-full h-full" />
+          <Image
+            src={getImageUrl(category.image)}
+            fill
+            alt={category.image.alt || category.name}
+            className="absolute inset-0 object-cover w-full h-full"
+          />
           <div className="absolute inset-0 bg-black/20"></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end md:justify-center items-start  h-full">
+          <div className="relative max-w-7xl mx-auto px-4 md:px-8 flex flex-col  justify-center items-start  h-full">
             <h1 className="md:text-4xl text-3xl lg:text-5xl font-bold mb-6 text-white">
               {category.name}
             </h1>
             {category.description && (
-                <p className="md:text-xl text-sm text-white  mx-auto">
-                  {category.description}
-                </p>
-              )}
+              <p className="md:text-xl text-sm text-white  mx-auto">
+                {category.description}
+              </p>
+            )}
           </div>
         </section>
         {/* Hero Section */}
@@ -56,14 +62,11 @@ export default async function CategoryPage({ params }) {
           </div>
         </section> */}
 
-
-
         {/* Products Section */}
-        <section className="py-20">
+        <section className="py-20 bg-gradient-to-br from-[#e6e0f8] to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {products.length > 0 ? (
               <>
-        
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {products.map((product) => (
                     <div
@@ -100,7 +103,6 @@ export default async function CategoryPage({ params }) {
                           </p>
                         )}
 
-       
                         <Link
                           className="w-full text-center block mt-4 px-4 py-2 bg-gradient-to-r from-[#fc5859] to-[#9053F9] text-white rounded-lg hover:bg-blue-700 transition"
                           href={`/proizvodi/${product.slug.current}`}
@@ -136,40 +138,14 @@ export default async function CategoryPage({ params }) {
                   Trenutno nema dostupnih proizvoda u kategoriji &quot;
                   {category.name}&quot;.
                 </p>
-                <Link
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-                  href="/kategorije"
-                >
-                  Pogledaj sve kategorije
-                </Link>
               </div>
             )}
           </div>
         </section>
 
+        <CTASection />
+
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-blue-600 to-red-600 text-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-              Trebate pomoć u izboru?
-            </h2>
-            <p className="text-xl mb-8 text-blue-100">
-              Kontaktirajte nas za personalizovanu preporuku patika
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="secondary" size="lg">
-                Pozovite: +381 64 382 4647
-              </Button>
-              <Button
-                variant="ghost"
-                size="lg"
-                className="border-2 border-white/30 hover:border-white"
-              >
-                Pošaljite upit
-              </Button>
-            </div>
-          </div>
-        </section>
       </div>
     );
   } catch (error) {
