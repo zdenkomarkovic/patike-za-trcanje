@@ -48,7 +48,7 @@ export default function Header() {
           : "bg-transparent text-white"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4  md:px-14">
         <div className="flex justify-between items-center py-2">
           <Link href={"/"} className="flex items-center gap-3">
             <Image
@@ -65,7 +65,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex space-x-6 font-bold text-lg">
+          <nav className="hidden lg:flex space-x-4 font-bold  text-lg">
             <Link href="/" className=" relative group">
               Početna
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-[#f75760] to-[#954ffd]  transition-all duration-200 group-hover:w-full"></span>
