@@ -25,15 +25,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Info */}
             <div className="space-y-8">
-              <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  Stupite u kontakt
-                </h2>
-                <p className="text-xl text-gray-600 leading-relaxed">
-                  Imate pitanja o našim proizvodima ili trebate savet za izbor
-                  patika? Kontaktirajte nas - tu smo da vam pomognemo!
-                </p>
-              </div>
+    
 
               <div className="space-y-6">
                 {/* Phone */}
@@ -169,7 +161,18 @@ export default function ContactPage() {
               </div>
 
               {/* Quick Actions */}
-              <div className="bg-gradient-to-br from-blue-50 to-red-50 p-8 rounded-2xl">
+
+            </div>
+            <div className="bg-gradient-to-br from-blue-50 to-red-50 p-8 rounded-2xl space-y-10">
+            <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                  Stupite u kontakt
+                </h2>
+                <p className="text-xl text-gray-600 leading-relaxed">
+                  Imate pitanja o našim proizvodima ili trebate savet za izbor
+                  patika? Kontaktirajte nas - tu smo da vam pomognemo!
+                </p>
+              </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
                   Brze akcije
                 </h3>
@@ -220,10 +223,8 @@ export default function ContactPage() {
                   </Button>
                 </div>
               </div>
-            </div>
-
             {/* Contact Form */}
-            <div className="bg-white rounded-2xl shadow-xl p-8">
+            {/* <div className="bg-white rounded-2xl shadow-xl p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 Pošaljite nam poruku
               </h2>
@@ -352,7 +353,7 @@ export default function ContactPage() {
                   </svg>
                 </Button>
               </form>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

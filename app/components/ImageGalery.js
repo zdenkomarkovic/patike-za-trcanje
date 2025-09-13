@@ -26,10 +26,10 @@ export default function ImageGallery({ images, productName }) {
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             priority
           />
-        </div>
+      
         
         {/* Zoom overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 rounded-2xl flex items-center justify-center">
+        <div className="absolute inset-0 bg-black/0 bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 rounded-2xl flex items-center justify-center">
           <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
@@ -37,14 +37,18 @@ export default function ImageGallery({ images, productName }) {
           </div>
         </div>
       </div>
-
+  </div>
       {/* Thumbnail slike */}
       {images.length > 1 && (
         <div className="grid grid-cols-4 gap-3">
           {images.map((image, index) => (
             <div 
               key={index} 
-              className={`relative group cursor-pointer ${selectedIndex === index ? 'ring-2 ring-blue-500' : ''}`}
+              className={`relative group cursor-pointer transition-all duration-200 ${
+                selectedIndex === index 
+                  ? 'ring-2 ring-blue-500 ring-offset-2' 
+                  : 'hover:ring-2 hover:ring-gray-300'
+              }`}
               onClick={() => setSelectedIndex(index)}
             >
               <div className="relative h-20 overflow-hidden rounded-lg bg-gray-100">
@@ -67,23 +71,29 @@ export default function ImageGallery({ images, productName }) {
           className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
           onClick={() => setIsModalOpen(false)}
         >
-          <div className="relative max-w-4xl max-h-full">
+          <div className="relative max-w-6xl max-h-full">
+            {/* Close button */}
             <button
-              onClick={() => setIsModalOpen(false)}
-              className="absolute top-4 right-4 text-white hover:text-gray-300 z-10"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsModalOpen(false);
+              }}
+              className="absolute top-4 right-4 text-white hover:text-gray-300 z-10 bg-black bg-opacity-50 rounded-full p-2"
             >
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
             
-            <div className="relative h-[80vh] w-full">
+            {/* Glavna slika u modalu */}
+            <div className="relative h-[85vh] w-full">
               <Image
                 src={selectedImage.asset.url}
                 alt={productName}
                 width={1200}
                 height={800}
                 className="w-full h-full object-contain"
+                priority
               />
             </div>
 
@@ -95,9 +105,9 @@ export default function ImageGallery({ images, productName }) {
                     e.stopPropagation();
                     setSelectedIndex(selectedIndex > 0 ? selectedIndex - 1 : images.length - 1);
                   }}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300"
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 bg-black bg-opacity-50 rounded-full p-3"
                 >
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
@@ -107,13 +117,31 @@ export default function ImageGallery({ images, productName }) {
                     e.stopPropagation();
                     setSelectedIndex(selectedIndex < images.length - 1 ? selectedIndex + 1 : 0);
                   }}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 bg-black bg-opacity-50 rounded-full p-3"
                 >
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
               </>
+            )}
+
+            {/* Thumbnail navigacija u modalu */}
+            {images.length > 1 && (
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                {images.map((image, index) => (
+                  <button
+                    key={index}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedIndex(index);
+                    }}
+                    className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                      selectedIndex === index ? 'bg-white' : 'bg-white bg-opacity-50'
+                    }`}
+                  />
+                ))}
+              </div>
             )}
           </div>
         </div>
