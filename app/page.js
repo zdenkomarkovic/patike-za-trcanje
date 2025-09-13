@@ -12,7 +12,7 @@ export default async function HomePage() {
   const categories = await getCategories();
 
   const heroData = {
-    title: "Saucony Shop",
+    title: "Sesame Shop",
     subtitle: "Patike za trčanje",
     description:
       "Profesionalne patike za trčanje za početnike, rekreativce i napredne trkače.",
@@ -35,7 +35,6 @@ export default async function HomePage() {
       <Runners />
       <TrailSection />
       <AboutSection />
- 
     </div>
   );
 }
