@@ -97,7 +97,7 @@ export default function Header() {
             aria-label="Toggle menu"
           >
             <svg
-              className={`w-6 h-6 transition-transform duration-200 ${isMenuOpen ? "rotate-90" : ""}`}
+              className={`w-6 h-6 text-white transition-transform duration-200 ${isMenuOpen ? "rotate-90" : ""}`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -123,10 +123,10 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         <div
-          className={`lg:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"} overflow-hidden`}
+          className={`lg:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? "max-h-auto bg-white " : "max-h-0 opacity-0"} overflow-hidden`}
         >
           <div className="py-4 border-t">
-            <nav className="flex flex-col space-y-4">
+            <nav className="flex flex-col">
               <Link
                 href="/"
                 onClick={closeMenu}
