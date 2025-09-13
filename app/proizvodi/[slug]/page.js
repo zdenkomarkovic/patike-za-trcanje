@@ -49,50 +49,16 @@ export default async function ProductPage({ params }) {
 
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-500 pt-20">
       {/* Breadcrumb */}
-      <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        
-        </div>
-      </div>
+
 
       {/* Proizvod detalji */}
+   <div className="bg-gray-100 h-full">
+
+   
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-{/* Galerija slika */}
-{/* <div className="space-y-4">
-  {allImages.length > 0 && (
-    <div className="relative group">
-      <div className="aspect-w-1 aspect-h-1 relative h-96 lg:h-[500px] overflow-hidden rounded-2xl bg-gray-100">
-        <Image
-          src={allImages[0].asset.url}
-          alt={product.name}
-          fill
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
-          priority
-        />
-      </div>
-    </div>
-  )}
-
-  {allImages.length > 1 && (
-    <div className="grid grid-cols-4 gap-3">
-      {allImages.map((image, index) => (
-        <div key={index} className="relative group cursor-pointer">
-          <div className="aspect-w-1 aspect-h-1 relative h-20 overflow-hidden rounded-lg bg-gray-100">
-            <Image
-              src={image.asset.url}
-              alt={`${product.name} - slika ${index + 1}`}
-              fill
-              className="object-cover transition-transform duration-200 group-hover:scale-110"
-            />
-          </div>
-        </div>
-      ))}
-    </div>
-  )}
-</div> */}
 
 {/* Galerija slika */}
 <ImageGallery    images={product.images} productName={product.name} />
@@ -157,6 +123,7 @@ export default async function ProductPage({ params }) {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

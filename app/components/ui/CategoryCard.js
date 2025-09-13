@@ -22,15 +22,13 @@ export default function CategoryCard({ category, className = "", ...props }) {
       {...props}
     >
       <motion.div 
-      initial={{ opacity: 0, y: 50, scale: 0.9 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true, amount: 0.1 }}
-      transition={{
-        duration: 0.3,
-        ease: "easeOut",
-      }}  
-     
-      className="relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2">
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.3 }}
+
+       whileTap={{ scale: 0.95 }}
+      className="relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 ">
         <div className="aspect-video relative h-full">
           <Image
             src={imageUrl}
