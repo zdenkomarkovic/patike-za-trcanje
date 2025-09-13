@@ -59,8 +59,8 @@ export default function Header() {
               className=""
             />
             <div>
-              <p className={`font-bold text-xl leading-tight`}>Saucony Shop</p>
-              <p className="text-base text-gray-100">Sreten Spasic</p>
+              <p className={`font-bold text-xl leading-tight`}>Sesame Shop</p>
+              <p className="text-base text-gray-100">Sport Store</p>
             </div>
           </Link>
 
@@ -83,7 +83,6 @@ export default function Header() {
               </Link>
             ))}
 
-          
             <Link href="/kontakt" className=" relative group">
               Kontakt
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-[#f75760] to-[#954ffd]  transition-all duration-200 group-hover:w-full"></span>

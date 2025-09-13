@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Saucony Shop - Patike za trčanje | Sreten Spasić",
+  title: "Sesame Shop - Patike za trčanje | Sreten Spasić",
   description:
-    "Profesionalne patike za trčanje Saucony brenda. Za početnike, rekreativce i napredne trkače. Kvalitet i tradicija od 1898. godine.",
+    "Profesionalne patike za trčanje raznih brendova. Za početnike, rekreativce i napredne trkače. Kvalitet i tradicija.",
   icons: {
     icon: "/android-chrome-192x192.png",
     apple: "/apple-touch-icon.png",
