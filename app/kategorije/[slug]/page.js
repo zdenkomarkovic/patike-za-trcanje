@@ -30,11 +30,11 @@ export default async function CategoryPage({ params }) {
           <Image src={getImageUrl(category.image)} fill alt={category.image.alt || category.name} className="absolute inset-0 object-cover w-full h-full" />
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end md:justify-center items-start  h-full">
-            <h1 className="md:text-4xl text-2xl lg:text-5xl font-bold mb-6 text-white">
+            <h1 className="md:text-4xl text-3xl lg:text-5xl font-bold mb-6 text-white">
               {category.name}
             </h1>
             {category.description && (
-                <p className="md:text-xl text-sm text-blue-100  mx-auto">
+                <p className="md:text-xl text-sm text-white  mx-auto">
                   {category.description}
                 </p>
               )}

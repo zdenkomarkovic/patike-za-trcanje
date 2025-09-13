@@ -8,7 +8,7 @@ const Runners = () => {
          <div className="   container mx-auto px-2 md:px-10 ">
        
       <h2 className="text-2xl md:text-4xl font-bold  mb-6 md:mb-10 text-center">
-        Patike za trening – vodič za početnike i rekreativce
+        Patike za trčanje – vodič za početnike i rekreativce
       </h2>
       <div className="space-y-4 text-lg">
         <p className="first-letter:pl-6">
