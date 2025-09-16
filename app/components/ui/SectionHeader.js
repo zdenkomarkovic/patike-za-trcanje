@@ -1,20 +1,16 @@
-import { cn } from '@/app/lib/utils';
+import { cn } from "@/app/lib/utils";
 
-export default function SectionHeader({ 
-  title, 
-  subtitle, 
+export default function SectionHeader({
+  title,
+  subtitle,
   description,
-  className = '',
+  className = "",
   centered = true,
-  ...props 
+  ...props
 }) {
   return (
-    <div 
-      className={cn(
-        'mb-16',
-        centered && 'text-center',
-        className
-      )} 
+    <div
+      className={cn("mb-16", centered && "text-center", className)}
       {...props}
     >
       {subtitle && (
@@ -22,14 +18,16 @@ export default function SectionHeader({
           {subtitle}
         </div>
       )}
-      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+      <h2 className="text-3xl lg:text-4xl font-bold text-[#494179] mb-4">
         {title}
       </h2>
       {description && (
-        <p className={cn(
-          'text-xl text-gray-600',
-          centered && 'max-w-3xl mx-auto'
-        )}>
+        <p
+          className={cn(
+            "text-xl text-[#494179]",
+            centered && "max-w-3xl mx-auto"
+          )}
+        >
           {description}
         </p>
       )}

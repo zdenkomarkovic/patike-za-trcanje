@@ -32,7 +32,7 @@ export default async function CategoryPage({ params }) {
             src={getImageUrl(category.image)}
             fill
             alt={category.image.alt || category.name}
-            className="absolute inset-0 object-cover w-full h-full"
+            className="absolute inset-0 object-cover w-full h-full [object-position:50%_80%]"
           />
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="relative max-w-7xl mx-auto px-4 md:px-8 flex flex-col  justify-center items-start  h-full">
@@ -63,7 +63,7 @@ export default async function CategoryPage({ params }) {
         </section> */}
 
         {/* Products Section */}
-        <section className="py-20 bg-gradient-to-br from-[#e6e0f8] to-white">
+        <section className="py-20 secondary primarytext">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {products.length > 0 ? (
               <>
@@ -81,7 +81,7 @@ export default async function CategoryPage({ params }) {
                             className="absolute object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
                           />
                           {product.featured && (
-                            <div className="absolute top-4 left-4 bg-gradient-to-r from-blue-600 to-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <div className="absolute top-4 left-4 primarybg text-white px-3 py-1 rounded-full text-sm font-semibold">
                               Izdvojeno
                             </div>
                           )}
@@ -89,22 +89,18 @@ export default async function CategoryPage({ params }) {
                       )}
 
                       <div className="p-6">
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">
+                        <h3 className="text-xl font-bold mb-2">
                           {product.name}
                         </h3>
                         {product.brand && (
-                          <div className="text-sm text-gray-500 mb-2">
-                            {product.brand}
-                          </div>
+                          <div className="text-sm mb-2">{product.brand}</div>
                         )}
                         {product.shortDescription && (
-                          <p className="text-gray-600 mb-4">
-                            {product.shortDescription}
-                          </p>
+                          <p className=" mb-4">{product.shortDescription}</p>
                         )}
 
                         <Link
-                          className="w-full text-center block mt-4 px-4 py-2 bg-gradient-to-r from-[#fc5859] to-[#9053F9] text-white rounded-lg hover:bg-blue-700 transition"
+                          className="w-full text-center block mt-4 px-4 py-2 primarybg text-white rounded-lg"
                           href={`/proizvodi/${product.slug.current}`}
                         >
                           Pogledaj detalje
@@ -115,10 +111,10 @@ export default async function CategoryPage({ params }) {
                 </div>
               </>
             ) : (
-              <div className="text-center py-16">
-                <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="text-center py-16 primarytext">
+                <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
                   <svg
-                    className="w-12 h-12 text-gray-400"
+                    className="w-12 h-12 primarytext"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -131,10 +127,10 @@ export default async function CategoryPage({ params }) {
                     />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                <h3 className="text-2xl font-bold mb-4">
                   Nema proizvoda u ovoj kategoriji
                 </h3>
-                <p className="text-gray-600 mb-8">
+                <p className=" mb-8">
                   Trenutno nema dostupnih proizvoda u kategoriji &quot;
                   {category.name}&quot;.
                 </p>
@@ -144,7 +140,7 @@ export default async function CategoryPage({ params }) {
         </section>
 
         <CTASection />
-
+        <div className="py-1 secondary"></div>
         {/* CTA Section */}
       </div>
     );

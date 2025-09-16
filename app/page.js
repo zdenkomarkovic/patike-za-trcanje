@@ -6,6 +6,7 @@ import CTASection from "./components/sections/CTASection";
 import { getCategories } from "../sanity/lib/data";
 import TrailSection from "./components/sections/TrailSection";
 import Runners from "./components/sections/Runners";
+import AboutMe from "./components/sections/AboutMe";
 
 export default async function HomePage() {
   // Dohvatanje kategorija iz Sanity CMS-a
@@ -34,6 +35,7 @@ export default async function HomePage() {
       <FeaturesSection />
       <Runners />
       <TrailSection />
+      <AboutMe />
       <AboutSection />
     </div>
   );

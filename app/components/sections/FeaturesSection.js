@@ -1,4 +1,3 @@
-import Section from "../ui/Section";
 import SectionHeader from "../ui/SectionHeader";
 import FeatureCard from "../ui/FeatureCard";
 
@@ -70,7 +69,7 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-[#e6e0f8] to-white py-8 md:py-16">
+    <div className="bg-[#e6e0f8] py-8 md:py-16">
       <div className="container mx-auto px-2 md:px-10">
         <SectionHeader
           title="Zašto izabrati Saucony Shop?"

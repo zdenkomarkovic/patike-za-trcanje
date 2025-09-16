@@ -147,9 +147,9 @@ const TrailSection = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-[#e6e0f8] to-white py-8 md:py-16">
+    <div className="secondary text-[#494179] primary py-8 md:py-16">
       <div className="container mx-auto px-2 md:px-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-10 text-center">
+        <h2 className="text-2xl  primary md:text-3xl font-bold mb-6 md:mb-10 text-center">
           Trail patike – vodič za trčanje u prirodi
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
@@ -181,7 +181,7 @@ const TrailSection = () => {
 
           {/* Osnovne karakteristike trail patika */}
           <Card className="p-6">
-            <h3 className=" font-bold mb-4 text-center text-gray-800">
+            <h3 className=" font-bold mb-4 text-center ">
               Osnovne karakteristike trail patika
             </h3>
             <ul className="space-y-2 text-lg ">
@@ -258,7 +258,7 @@ const TrailSection = () => {
             >
               <Card
                 key={card.id}
-                className="p-6 bg-gradient-to-br from-[#f75760] to-[#954ffd] text-white hover:scale-105 transition-all duration-300 h-full"
+                className="p-6 primarybg text-white hover:scale-105 transition-all duration-300 h-full"
               >
                 <h3 className="text-xl md:text-2xl font-bold mb-4 text-center text-white">
                   {card.title}

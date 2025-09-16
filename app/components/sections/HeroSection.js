@@ -7,12 +7,12 @@ export default function HeroSection({ title, subtitle, description, image }) {
         src={image.src}
         alt={image.alt}
         fill
-        className=" w-full object-cover"
+        className=" w-full object-cover [object-position:50%_100%]"
       />
       <div className="absolute inset-0 bg-black/50"></div>
       <div className="container mx-auto px-4 md:px-20 py-16 md:py-24 relative h-full flex flex-col gap-8 justify-end">
         <div className="space-y-4">
-          <h1 className="text-4xl md:text-8xl font-bold leading-tight  bg-gradient-to-r from-[#f75760] to-[#954ffd] bg-clip-text text-transparent w-fit">
+          <h1 className="text-4xl md:text-8xl font-bold leading-tight   text-white w-fit">
             {title}
             {subtitle && (
               <span className="block text-2xl lg:text-5xl font-normal text-white mt-2">
@@ -31,7 +31,7 @@ export default function HeroSection({ title, subtitle, description, image }) {
         <div className="flex flex-col gap-1 text-center w-fit">
           <a
             href="tel:+381643824647"
-            className="text-white text-xl md:text-2xl flex items-center gap-2 bg-gradient-to-r from-[#f75760] to-[#954ffd] px-5 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r hover:from-[#954ffd] hover:to-[#f75760] "
+            className="text-white text-xl md:text-2xl flex items-center gap-2 bg-[#494179] px-5 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r hover:bg-[#3A2D6A] "
           >
             <svg
               className="w-6 h-6 text-white"

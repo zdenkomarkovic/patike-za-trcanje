@@ -13,13 +13,13 @@ export const SITE_CONFIG = {
     phone: "+381 64 382 4647",
     email: "sesameshopsportstore@gmail.com",
     instagram: "@sesameshoponline",
-    instagramUrl: "https://www.instagram.com/sesameshoponline",
+    instagramUrl: "https://www.instagram.com/patikezatrcanje.de/",
   },
 
   navigation: {
     main: [
       { name: "Početna", href: "/" },
-      { name: "O meni", href: "/o-meni" },
+      { name: "O meni", href: "/#o-meni" },
       { name: "Kategorije", href: "/#kategorije" },
       { name: "Kontakt", href: "/kontakt" },
     ],

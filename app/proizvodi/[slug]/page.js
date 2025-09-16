@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import { getImageUrl } from "@/sanity/lib/image";
 import { client } from "@/sanity/lib/client";
@@ -49,28 +48,28 @@ export default async function ProductPage({ params }) {
   const allImages = product.images || [];
 
   return (
-    <div className="min-h-screen bg-gray-500 pt-20">
+    <div className="min-h-screen primarybg pt-20">
       {/* Proizvod detalji */}
-      <div className="bg-gradient-to-br from-[#e6e0f8] to-white h-full">
+      <div className="secondary primarytext min-h-screen ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Informacije - PRIKAZUJE SE PRVO NA MOBILNOM */}
             <div className="space-y-10 text-center order-1 lg:order-2">
               <div>
-                <h1 className="text-2xl md:text-5xl text font-bold text-gray-900 mb-6">
+                <h1 className="text-2xl md:text-5xl text font-bold mb-6">
                   {product.name}
                 </h1>
                 {product.category && (
                   <Link
                     href={`/kategorije/${product.category.slug.current}`}
-                    className="text-blue-600 hover:text-blue-800 font-medium"
+                    className=" font-medium"
                   >
                     {product.category.name}
                   </Link>
                 )}
               </div>
               <div className="prose max-w-none">
-                <p className="text-gray-600 text-lg leading-relaxed">
+                <p className=" text-lg leading-relaxed">
                   {product.description}
                 </p>
               </div>
@@ -78,9 +77,7 @@ export default async function ProductPage({ params }) {
               {product.longDescription && (
                 <div className="prose max-w-none">
                   <h3 className="text-xl font-semibold mb-3">Opis</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {product.longDescription}
-                  </p>
+                  <p className=" leading-relaxed">{product.longDescription}</p>
                 </div>
               )}
 
@@ -101,7 +98,7 @@ export default async function ProductPage({ params }) {
               <div className="flex flex-col gap-1 text-center">
                 <a
                   href="tel:+381643824647"
-                  className="text-white w-fit mx-auto text-xl md:text-2xl flex items-center gap-2 bg-gradient-to-r from-[#f75760] to-[#954ffd] px-5 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r hover:from-[#954ffd] hover:to-[#f75760]"
+                  className="text-white w-fit mx-auto text-xl md:text-2xl flex items-center gap-2 primarybg px-5 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg "
                 >
                   <svg
                     className="w-6 h-6 text-white"

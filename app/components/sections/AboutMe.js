@@ -2,8 +2,8 @@ import React from "react";
 
 const AboutMe = () => {
   return (
-    <div className="bg-gradient-to-br from-[#e6e0f8] to-white">
-      <div className="container mx-auto px-2 md:px-10 md:space-y-6 py-28 md:py-32">
+    <div id="o-meni" className="primarybg text-white">
+      <div className="container mx-auto px-2 md:px-10 md:space-y-6 py-10 md:py-16">
         <h2 className="text-xl md:text-4xl text-center font-bold py-6 ">
           2015. godine sam istrčao svoje prve 5K na trci Nike Run BGD. Svidela
           mi se atmosfera među trkačima i nekako sam tu sebe pronašao.{" "}
@@ -36,7 +36,12 @@ const AboutMe = () => {
           ponovo nije bilo u našim radnjama. Odlučio sam da ga nabavim po svaku
           cenu. Preko prijatelja sam uspeo da ga poručim iz Nemačke i već na
           jesen 2022. pojavio sam se na trci 10K u svom novom, žutom Axon 2
-          modelu.
+          modelu,{" "}
+          <span className="font-bold text-[#FF7A59]">
+            {" "}
+            potpuno neocekivano nekoliko trkaca me je zaustavljalo i pitalo gde
+            sam ja to nasao, da li mogu i nima da nabavim.
+          </span>
           <span className="font-bold">
             {" "}
             Tada sam odlučio da pomognem domaćim trkačima da dođu do brenda
@@ -45,12 +50,6 @@ const AboutMe = () => {
             porudžbinama.
           </span>
           .
-        </p>
-        <p className="first-letter:pl-6">
-          {" "}
-          Tako sam odlucio da pomognem nasim trkacima da dodju i oni do Saucony
-          brenda, potrazio ovlascene distributere u Nemackoj koji mi mogu
-          provereno isporuciti patike na osnovu porudzbina.
         </p>
         <p className="first-letter:pl-6">
           U proleće 2023. u Srbiju je stigao moj prvi paket – pet pari Saucony

@@ -2,14 +2,14 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <div className="bg-gradient-to-br from-[#e6e0f8] to-white">
+    <div className="secondary primarytext">
       <div className="container px-2 md:px-10 mx-auto py-8 md:py-16">
-        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 md:mb-10 text-center">
+        <h2 className="text-3xl lg:text-4xl font-bold mb-6 md:mb-10 text-center">
           Saucony – istorija jednog od najstarijih sportskih brendova
         </h2>
         <div className=" grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <div className="space-y-4  text-gray-600 leading-relaxed">
+            <div className="space-y-4 leading-relaxed">
               <p>
                 Saucony je jedan od najstarijih i najpoznatijih svetskih
                 proizvođača patika za trčanje. Osnovan je još davne 1898. godine

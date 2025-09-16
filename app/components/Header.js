@@ -44,7 +44,7 @@ export default function Header() {
     <header
       className={` fixed top-0 z-50 w-full ${
         scrolled
-          ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-md text-primary"
+          ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-md primarytext"
           : "bg-transparent text-white"
       }`}
     >
@@ -52,15 +52,22 @@ export default function Header() {
         <div className="flex justify-between items-center py-2">
           <Link href={"/"} className="flex items-center gap-3">
             <Image
-              src={"/logo.jpg"}
+              src={"/logobeli.jpg"}
               width={60}
               height={60}
               alt="patike za trcanje"
-              className=""
+              className={` ${scrolled ? "hidden" : ""}`}
+            />
+            <Image
+              src={"/logocrni.jpg"}
+              width={60}
+              height={60}
+              alt="patike za trcanje"
+              className={` ${scrolled ? "" : "hidden"}`}
             />
             <div>
               <p className={`font-bold text-xl leading-tight`}>Sesame Shop</p>
-              <p className="text-base text-gray-100">Sport Store</p>
+              <p className="text-base">Sport Store</p>
             </div>
           </Link>
 
@@ -68,11 +75,11 @@ export default function Header() {
           <nav className="hidden lg:flex space-x-4 font-bold  text-lg">
             <Link href="/" className=" relative group">
               Početna
-              <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-[#f75760] to-[#954ffd]  transition-all duration-200 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-1 bg-[#494179]  transition-all duration-200 group-hover:w-full"></span>
             </Link>
-            <Link href="/o-meni" className=" relative group">
+            <Link href="/#o-meni" className=" relative group">
               O meni
-              <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-[#f75760] to-[#954ffd]  transition-all duration-200 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-1 bg-[#494179]  transition-all duration-200 group-hover:w-full"></span>
             </Link>
 
             {/* Categories from Sanity */}
@@ -83,24 +90,24 @@ export default function Header() {
                 className=" relative group"
               >
                 {category.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-[#f75760] to-[#954ffd]  transition-all duration-200 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-1 bg-[#494179]  transition-all duration-200 group-hover:w-full"></span>
               </Link>
             ))}
 
             <Link href="/kontakt" className=" relative group">
               Kontakt
-              <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-[#f75760] to-[#954ffd]  transition-all duration-200 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-1 bg-[#494179] transition-all duration-200 group-hover:w-full"></span>
             </Link>
           </nav>
 
           {/* Mobile menu button */}
           <button
             onClick={toggleMenu}
-            className="lg:hidden p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors"
+            className="lg:hidden p-2 rounded-md text-gray-700olors hover:text-blue-600 hover:bg-gray-100 transition-c"
             aria-label="Toggle menu"
           >
             <svg
-              className={`w-6 h-6 text-white transition-transform duration-200 ${isMenuOpen ? "rotate-90" : ""}`}
+              className={`w-6 h-6 ${scrolled ? "" : "text-white"}  transition-transform duration-200 ${isMenuOpen ? "rotate-90" : ""}`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
