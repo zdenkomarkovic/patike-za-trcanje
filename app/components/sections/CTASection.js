@@ -1,5 +1,4 @@
 import { SITE_CONFIG } from "@/app/constants/site";
-import Section from "../ui/Section";
 import Button from "../ui/Button";
 
 export default function CTASection({
@@ -34,7 +33,7 @@ export default function CTASection({
           <Button
             variant="ghost"
             size="lg"
-            className=" bg-[#FF7A59]  hover:text-[#494179]"
+            className=" bg-[#FF7A59] text-white  hover:text-[#494179]"
             href={(secondaryAction || defaultSecondaryAction).href}
           >
             {(secondaryAction || defaultSecondaryAction).text}

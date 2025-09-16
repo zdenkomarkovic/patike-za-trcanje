@@ -4,15 +4,15 @@ import Button from "../components/ui/Button";
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen secondary">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 to-red-600 text-white py-20">
+      <section className="primarybg  text-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+            <h1 className="text-4xl lg:text-5xl pt-10 font-bold mb-6">
               Kontaktirajte nas
             </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <p className="text-xl max-w-3xl mx-auto">
               Spremni smo da vam pomognemo u izboru savršenih patika za trčanje
             </p>
           </div>
@@ -20,19 +20,17 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Content */}
-      <section className="py-20">
+      <section className="py-20 primarytext">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Info */}
             <div className="space-y-8">
-    
-
               <div className="space-y-6">
                 {/* Phone */}
                 <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                  <div className="flex-shrink-0 w-12 h-12  rounded-xl flex items-center justify-center">
                     <svg
-                      className="w-6 h-6 text-blue-600"
+                      className="w-8 h-8"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -46,16 +44,14 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900">
-                      Telefon
-                    </h3>
+                    <h3 className="text-lg font-semibold">Telefon</h3>
                     <a
                       href="tel:+381643824647"
-                      className="text-blue-600 hover:text-blue-700 transition-colors text-lg"
+                      className=" hover:text-blue-700 transition-colors text-lg"
                     >
                       {SITE_CONFIG.company.phone}
                     </a>
-                    <p className="text-gray-500 text-sm mt-1">
+                    <p className="text-sm mt-1">
                       Pozovite nas za brzu konsultaciju
                     </p>
                   </div>
@@ -63,9 +59,9 @@ export default function ContactPage() {
 
                 {/* Email */}
                 <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
+                  <div className="flex-shrink-0 w-12 h-12  rounded-xl flex items-center justify-center">
                     <svg
-                      className="w-6 h-6 text-red-600"
+                      className="w-8 h-8 "
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -79,16 +75,14 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900">
-                      Email
-                    </h3>
+                    <h3 className="text-lg font-semibold ">Email</h3>
                     <a
                       href={`mailto:${SITE_CONFIG.company.email}`}
-                      className="text-blue-600 hover:text-blue-700 transition-colors text-lg"
+                      className=" hover:text-blue-700 transition-colors text-lg"
                     >
                       {SITE_CONFIG.company.email}
                     </a>
-                    <p className="text-gray-500 text-sm mt-1">
+                    <p className=" text-sm mt-1">
                       Pošaljite nam detaljno pitanje
                     </p>
                   </div>
@@ -96,9 +90,9 @@ export default function ContactPage() {
 
                 {/* Location */}
                 <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center">
                     <svg
-                      className="w-6 h-6 text-green-600"
+                      className="w-8 h-8 "
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -118,23 +112,19 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900">
-                      Lokacija
-                    </h3>
-                    <p className="text-gray-600 text-lg">
-                      {SITE_CONFIG.company.location}
-                    </p>
-                    <p className="text-gray-500 text-sm mt-1">
-                      Dostava širom Srbije
+                    <h3 className="text-lg font-semibold ">Lokacija</h3>
+                    <p className="text-lg">{SITE_CONFIG.company.location}</p>
+                    <p className=" text-sm mt-1">
+                      Dostava širom Srbije i ex Yu
                     </p>
                   </div>
                 </div>
 
                 {/* Instagram */}
                 <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                  <div className="flex-shrink-0 w-12 h-12  rounded-xl flex items-center justify-center">
                     <svg
-                      className="w-6 h-6 text-purple-600"
+                      className="w-7 h-7 "
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -142,18 +132,16 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900">
-                      Instagram
-                    </h3>
+                    <h3 className="text-lg font-semibold ">Instagram</h3>
                     <a
                       href={SITE_CONFIG.company.instagramUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-700 transition-colors text-lg"
+                      className=" hover:text-blue-700 transition-colors text-lg"
                     >
                       {SITE_CONFIG.company.instagram}
                     </a>
-                    <p className="text-gray-500 text-sm mt-1">
+                    <p className=" text-sm mt-1">
                       Pratite nas za najnovije vesti
                     </p>
                   </div>
@@ -161,68 +149,63 @@ export default function ContactPage() {
               </div>
 
               {/* Quick Actions */}
-
             </div>
-            <div className="bg-gradient-to-br from-blue-50 to-red-50 p-8 rounded-2xl space-y-10">
-            <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  Stupite u kontakt
-                </h2>
-                <p className="text-xl text-gray-600 leading-relaxed">
+            <div className="primarybg text-white p-8 rounded-2xl space-y-10">
+              <div>
+                <h2 className="text-3xl font-bold mb-6">Stupite u kontakt</h2>
+                <p className="text-xl leading-relaxed">
                   Imate pitanja o našim proizvodima ili trebate savet za izbor
                   patika? Kontaktirajte nas - tu smo da vam pomognemo!
                 </p>
               </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  Brze akcije
-                </h3>
-                <div className="space-y-3">
-                  <Button
-                    variant="primary"
-                    className="w-full justify-center"
-                    onClick={() =>
-                      (window.location.href = `tel:${SITE_CONFIG.company.phone.replace(/\s/g, "")}`)
-                    }
+              <h3 className="text-xl font-bold  mb-4">Brze akcije</h3>
+              <div className="space-y-3">
+                <Button
+                  variant="secondary"
+                  className="w-full justify-center "
+                  onClick={() =>
+                    (window.location.href = `tel:${SITE_CONFIG.company.phone.replace(/\s/g, "")}`)
+                  }
+                >
+                  <svg
+                    className="w-5 h-5 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <svg
-                      className="w-5 h-5 mr-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                      />
-                    </svg>
-                    Pozovi odmah
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="w-full justify-center"
-                    onClick={() =>
-                      (window.location.href = `mailto:${SITE_CONFIG.company.email}`)
-                    }
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    />
+                  </svg>
+                  Pozovi odmah
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="w-full justify-center bg-[#FF7A59] text-white  hover:text-[#494179]"
+                  onClick={() =>
+                    (window.location.href = `mailto:${SITE_CONFIG.company.email}`)
+                  }
+                >
+                  <svg
+                    className="w-5 h-5 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <svg
-                      className="w-5 h-5 mr-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
-                    Pošalji email
-                  </Button>
-                </div>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                  Pošalji email
+                </Button>
               </div>
+            </div>
             {/* Contact Form */}
             {/* <div className="bg-white rounded-2xl shadow-xl p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
@@ -358,48 +341,50 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      {
+        <div className="max-w-5xl mx-auto p-0.5 primarybg"></div> /* FAQ Section */
+      }
+      <section className="py-16 primarytext ">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold mb-4">
               Često postavljana pitanja
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl">
               Odgovori na najčešća pitanja o našim proizvodima
             </p>
           </div>
 
-          <div className="space-y-6">
-            <div className="bg-gray-50 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+          <div className="space-y-6 text-white">
+            <div className="primarybg rounded-xl p-6">
+              <h3 className="text-lg font-semibold  mb-3">
                 Kako da izaberem pravu veličinu patika?
               </h3>
-              <p className="text-gray-600">
+              <p className="">
                 Preporučujemo da izaberete patike za pola broja veće od vaše
                 uobičajene veličine. Ovo je posebno važno za trail patike. Noge
                 se šire tokom dana i dugog trčanja.
               </p>
             </div>
 
-            <div className="bg-gray-50 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+            <div className="primarybg rounded-xl p-6">
+              <h3 className="text-lg font-semibold mb-3">
                 Koja je razlika između patika za početnike i naprednih trkača?
               </h3>
-              <p className="text-gray-600">
+              <p className="">
                 Patike za početnike imaju veću amortizaciju, stabilnost i
                 zaštitu. Napredne patike su lakše, sa manje amortizacije,
                 dizajnirane za brzinu i efikasnost.
               </p>
             </div>
 
-            <div className="bg-gray-50 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+            <div className="primarybg rounded-xl p-6">
+              <h3 className="text-lg font-semibold mb-3">
                 Da li nudite dostavu?
               </h3>
-              <p className="text-gray-600">
-                Da, nudimo dostavu širom Srbije. Kontaktirajte nas za
-                informacije o cenama dostave i vremenu isporuke.
+              <p className="">
+                Da, nudimo dostavu širom Srbije i ex Jugoslavije. Kontaktirajte
+                nas za informacije o cenama dostave i vremenu isporuke.
               </p>
             </div>
           </div>
