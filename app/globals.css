@@ -5,6 +5,18 @@
   --foreground: #171717;
 }
 
+/* Hide Header and Footer on Studio pages */
+body:has([data-studio]) header,
+body:has([data-studio]) footer {
+  display: none !important;
+}
+
+/* Alternative approach - hide based on URL */
+body[data-path^="/studio"] header,
+body[data-path^="/studio"] footer {
+  display: none !important;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
