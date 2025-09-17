@@ -10,9 +10,12 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [categories, setCategories] = useState([]);
   const [scrolled, setScrolled] = useState(false);
+  const [isCategoriesDropdownOpen, setIsCategoriesDropdownOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
+  const toggleCategoriesDropdown = () => setIsCategoriesDropdownOpen(!isCategoriesDropdownOpen);
+  const closeCategoriesDropdown = () => setIsCategoriesDropdownOpen(false);
 
   useEffect(() => {
     const HandleScroll = () => {
@@ -26,6 +29,20 @@ export default function Header() {
       document.removeEventListener("scroll", HandleScroll);
     };
   }, []);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isCategoriesDropdownOpen && !event.target.closest('.categories-dropdown')) {
+        setIsCategoriesDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isCategoriesDropdownOpen]);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -82,17 +99,42 @@ export default function Header() {
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-[#494179]  transition-all duration-200 group-hover:w-full"></span>
             </Link>
 
-            {/* Categories from Sanity */}
-            {categories.map((category) => (
-              <Link
-                key={category._id}
-                href={`/kategorije/${category.slug.current}`}
-                className=" relative group"
-              >
-                {category.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-1 bg-[#494179]  transition-all duration-200 group-hover:w-full"></span>
-              </Link>
-            ))}
+            {/* Categories Dropdown */}
+            <div 
+              className="relative group categories-dropdown"
+              onMouseEnter={() => setIsCategoriesDropdownOpen(true)}
+              onMouseLeave={() => setIsCategoriesDropdownOpen(false)}
+            >
+              <button className="font-bold text-lg relative group flex items-center">
+                Kategorije
+                <span className="absolute -bottom-1 left-0 w-0 h-1 bg-[#494179] transition-all duration-200 group-hover:w-full"></span>
+                <svg 
+                  className={`ml-1 w-4 h-4 transition-transform duration-200 ${isCategoriesDropdownOpen ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              {/* Dropdown Menu */}
+              <div className={`absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 z-50 transition-all duration-200 ${
+                isCategoriesDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
+              }`}>
+                <div className="py-2">
+                  {categories.map((category) => (
+                    <Link
+                      key={category._id}
+                      href={`/kategorije/${category.slug.current}`}
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#494179] transition-colors duration-200"
+                    >
+                      {category.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
 
             <Link href="/kontakt" className=" relative group">
               Kontakt
@@ -145,17 +187,39 @@ export default function Header() {
                 Početna
               </Link>
 
-              {/* Categories from Sanity */}
-              {categories.map((category) => (
-                <Link
-                  key={category._id}
-                  href={`/kategorije/${category.slug.current}`}
-                  onClick={closeMenu}
-                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors py-2 px-4 rounded-md hover:bg-gray-50"
+              {/* Categories Dropdown for Mobile */}
+              <div className="border-b border-gray-200">
+                <button
+                  onClick={toggleCategoriesDropdown}
+                  className="w-full text-left text-gray-700 hover:text-blue-600 font-medium transition-colors py-2 px-4 rounded-md hover:bg-gray-50 flex items-center justify-between"
                 >
-                  {category.name}
-                </Link>
-              ))}
+                  Kategorije
+                  <svg 
+                    className={`w-4 h-4 transition-transform duration-200 ${isCategoriesDropdownOpen ? 'rotate-180' : ''}`} 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {/* Mobile Dropdown Menu */}
+                <div className={`transition-all duration-200 ${
+                  isCategoriesDropdownOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                } overflow-hidden`}>
+                  {categories.map((category) => (
+                    <Link
+                      key={category._id}
+                      href={`/kategorije/${category.slug.current}`}
+                      onClick={closeMenu}
+                      className="block text-gray-600 hover:text-blue-600 font-medium transition-colors py-2 px-8 rounded-md hover:bg-gray-50"
+                    >
+                      {category.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
 
               <Link
                 href="/kontakt"

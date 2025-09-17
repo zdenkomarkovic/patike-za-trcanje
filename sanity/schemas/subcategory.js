@@ -1,11 +1,11 @@
 export default {
-  name: 'category',
-  title: 'Kategorije',
+  name: 'subcategory',
+  title: 'Podkategorije',
   type: 'document',
   fields: [
     {
       name: 'name',
-      title: 'Naziv kategorije',
+      title: 'Naziv podkategorije',
       type: 'string',
       validation: Rule => Rule.required()
     },
@@ -21,24 +21,16 @@ export default {
     },
     {
       name: 'description',
-      title: 'Opis kategorije',
+      title: 'Opis podkategorije',
       type: 'text',
       rows: 3
     },
     {
-      name: 'image',
-      title: 'Slika kategorije',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        {
-          name: 'alt',
-          title: 'Alt tekst',
-          type: 'string',
-        }
-      ]
+      name: 'parentCategory',
+      title: 'Glavna kategorija',
+      type: 'reference',
+      to: [{ type: 'category' }],
+      validation: Rule => Rule.required()
     },
     {
       name: 'order',
@@ -48,27 +40,23 @@ export default {
     },
     {
       name: 'isActive',
-      title: 'Aktivna kategorija',
+      title: 'Aktivna podkategorija',
       type: 'boolean',
       initialValue: true
-    },
-    {
-      name: 'subcategories',
-      title: 'Podkategorije',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [{ type: 'subcategory' }]
-        }
-      ]
     }
   ],
   preview: {
     select: {
       title: 'name',
-      subtitle: 'description',
-      media: 'image'
+      subtitle: 'parentCategory.name',
+      media: 'parentCategory.image'
+    },
+    prepare(selection) {
+      const { title, subtitle } = selection;
+      return {
+        title: title,
+        subtitle: `Podkategorija od: ${subtitle}`
+      };
     }
   }
 }

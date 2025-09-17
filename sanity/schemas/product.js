@@ -33,6 +33,13 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      name: 'subcategory',
+      title: 'Podkategorija',
+      type: 'reference',
+      to: [{type: 'subcategory'}],
+      description: 'Opcionalna podkategorija'
+    },
+    {
       name: 'shortDescription',
       title: 'Kratak opis',
       type: 'text',
@@ -164,7 +171,16 @@ export default {
     select: {
       title: 'name',
       subtitle: 'category.name',
+      subcategory: 'subcategory.name',
       media: 'images.0'
+    },
+    prepare(selection) {
+      const { title, subtitle, subcategory } = selection;
+      return {
+        title: title,
+        subtitle: subcategory ? `${subtitle} > ${subcategory}` : subtitle,
+        media: selection.media
+      };
     }
   }
 }

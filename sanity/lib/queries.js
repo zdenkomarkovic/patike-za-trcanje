@@ -28,6 +28,14 @@ export const categoryBySlugQuery = `
         url
       },
       alt
+    },
+    subcategories[]->{
+      _id,
+      name,
+      slug,
+      description,
+      order,
+      isActive
     }
   }
 `
@@ -66,6 +74,56 @@ export const productsByCategoryQuery = `
     slug,
     shortDescription,
     category->{
+      _id,
+      name,
+      slug
+    },
+    subcategory->{
+      _id,
+      name,
+      slug
+    },
+    images[] {
+      asset->{
+        _id,
+        url
+      },
+      alt
+    },
+    price,
+    featured,
+    inStock
+  }
+`
+
+export const subcategoryBySlugQuery = `
+  *[_type == "subcategory" && slug.current == $slug && isActive == true][0] {
+    _id,
+    name,
+    slug,
+    description,
+    parentCategory->{
+      _id,
+      name,
+      slug
+    },
+    order
+  }
+`
+
+export const productsBySubcategoryQuery = `
+  *[_type == "product" && subcategory._ref == $subcategoryId && inStock == true] | order(order asc) {
+    _id,
+    name,
+    brand,
+    slug,
+    shortDescription,
+    category->{
+      _id,
+      name,
+      slug
+    },
+    subcategory->{
       _id,
       name,
       slug

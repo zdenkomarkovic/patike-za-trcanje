@@ -2,6 +2,7 @@ import { client } from "@/sanity/lib/client";
 import {
   categoryBySlugQuery,
   productsByCategoryQuery,
+  productsBySubcategoryQuery,
 } from "@/sanity/lib/queries";
 import { getImageUrl } from "@/sanity/lib/image";
 import Button from "@/app/components/ui/Button";
@@ -10,8 +11,10 @@ import Link from "next/link";
 import Image from "next/image";
 import CTASection from "@/app/components/sections/CTASection";
 
-export default async function CategoryPage({ params }) {
+export default async function CategoryPage({ params, searchParams }) {
   const { slug } = await params;
+  const selectedSubcategory = searchParams?.subcategory;
+  
   try {
     // Fetch category data
     const category = await client.fetch(categoryBySlugQuery, { slug });
@@ -20,10 +23,37 @@ export default async function CategoryPage({ params }) {
       notFound();
     }
 
-    // Fetch products for this category
-    const products = await client.fetch(productsByCategoryQuery, {
-      categoryId: category._id,
-    });
+    // Fetch subcategories for this category
+    const subcategories = await client.fetch(`
+      *[_type == "subcategory" && parentCategory._ref == $categoryId && isActive == true] | order(order asc) {
+        _id,
+        name,
+        slug,
+        description,
+        order,
+        isActive
+      }
+    `, { categoryId: category._id });
+
+    // Add subcategories to category object
+    category.subcategories = subcategories;
+
+    // Fetch products for this category or subcategory
+    let products;
+    if (selectedSubcategory) {
+      // Filter products by subcategory
+      const allProducts = await client.fetch(productsByCategoryQuery, {
+        categoryId: category._id,
+      });
+      products = allProducts.filter(product => 
+        product.subcategory && product.subcategory.slug.current === selectedSubcategory
+      );
+    } else {
+      // Show all products in category
+      products = await client.fetch(productsByCategoryQuery, {
+        categoryId: category._id,
+      });
+    }
 
     return (
       <div className="min-h-screen ">
@@ -46,27 +76,78 @@ export default async function CategoryPage({ params }) {
             )}
           </div>
         </section>
-        {/* Hero Section */}
-        {/* <section className="bg-gradient-to-br from-blue-900 to-red-600 text-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                {category.name}
-              </h1>
-              {category.description && (
-                <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-                  {category.description}
+
+        {/* Subcategories Section */}
+        {category.subcategories && category.subcategories.length > 0 && (
+          <section className="py-12 bg-gray-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                  Filtriraj po podkategorijama
+                </h2>
+                <p className="text-gray-600">
+                  Izaberite podkategoriju za bolju pretragu proizvoda
                 </p>
-              )}
+              </div>
+              
+              <div className="flex flex-wrap justify-center gap-4">
+                {/* All products button */}
+                <Link
+                  href={`/kategorije/${category.slug.current}`}
+                  className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${
+                    !selectedSubcategory
+                      ? 'bg-[#494179] text-white shadow-lg'
+                      : 'bg-white text-gray-700 border border-gray-300 hover:border-[#494179] hover:text-[#494179]'
+                  }`}
+                >
+                  Svi proizvodi
+                </Link>
+                
+                {/* Subcategory buttons */}
+                {category.subcategories && category.subcategories.length > 0 ? (
+                  category.subcategories
+                    .filter(sub => sub.isActive !== false) // Show all if isActive is undefined
+                    .sort((a, b) => (a.order || 0) - (b.order || 0))
+                    .map((subcategory) => (
+                      <Link
+                        key={subcategory._id}
+                        href={`/kategorije/${category.slug.current}?subcategory=${subcategory.slug.current}`}
+                        className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${
+                          selectedSubcategory === subcategory.slug.current
+                            ? 'bg-[#494179] text-white shadow-lg'
+                            : 'bg-white text-gray-700 border border-gray-300 hover:border-[#494179] hover:text-[#494179]'
+                        }`}
+                      >
+                        {subcategory.name}
+                      </Link>
+                    ))
+                ) : (
+                  <div className="text-gray-500 italic">
+                    Nema podkategorija za ovu kategoriju
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-        </section> */}
+          </section>
+        )}
 
         {/* Products Section */}
         <section className="py-20 secondary primarytext">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {products.length > 0 ? (
               <>
+                {/* Products header */}
+                {selectedSubcategory && (
+                  <div className="mb-8">
+                    <h2 className="text-2xl font-bold mb-2">
+                      {category.subcategories.find(sub => sub.slug.current === selectedSubcategory)?.name}
+                    </h2>
+                    <p className="text-gray-600">
+                      {products.length} proizvoda u ovoj podkategoriji
+                    </p>
+                  </div>
+                )}
+                
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {products.map((product) => (
                     <div
