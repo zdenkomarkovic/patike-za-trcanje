@@ -56,7 +56,7 @@ export default async function CategoryPage({ params, searchParams }) {
     }
 
     return (
-      <div className="min-h-screen ">
+      <div className="min-h-screen secondary ">
         <section className="h-[70dvh] relative">
           <Image
             src={getImageUrl(category.image)}
@@ -75,22 +75,15 @@ export default async function CategoryPage({ params, searchParams }) {
               </p>
             )}
           </div>
+          
         </section>
 
         {/* Subcategories Section */}
         {category.subcategories && category.subcategories.length > 0 && (
-          <section className="py-12 bg-gray-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                  Filtriraj po podkategorijama
-                </h2>
-                <p className="text-gray-600">
-                  Izaberite podkategoriju za bolju pretragu proizvoda
-                </p>
-              </div>
+        
+          
               
-              <div className="flex flex-wrap justify-center gap-4">
+              <div className="max-w-7xl  mx-auto px-4 flex flex-wrap justify-center gap-4 mt-4">
                 {/* All products button */}
                 <Link
                   href={`/kategorije/${category.slug.current}`}
@@ -100,7 +93,7 @@ export default async function CategoryPage({ params, searchParams }) {
                       : 'bg-white text-gray-700 border border-gray-300 hover:border-[#494179] hover:text-[#494179]'
                   }`}
                 >
-                  Svi proizvodi
+                  Sve podkategorije
                 </Link>
                 
                 {/* Subcategory buttons */}
@@ -127,8 +120,8 @@ export default async function CategoryPage({ params, searchParams }) {
                   </div>
                 )}
               </div>
-            </div>
-          </section>
+ 
+    
         )}
 
         {/* Products Section */}
@@ -137,16 +130,7 @@ export default async function CategoryPage({ params, searchParams }) {
             {products.length > 0 ? (
               <>
                 {/* Products header */}
-                {selectedSubcategory && (
-                  <div className="mb-8">
-                    <h2 className="text-2xl font-bold mb-2">
-                      {category.subcategories.find(sub => sub.slug.current === selectedSubcategory)?.name}
-                    </h2>
-                    <p className="text-gray-600">
-                      {products.length} proizvoda u ovoj podkategoriji
-                    </p>
-                  </div>
-                )}
+  
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {products.map((product) => (
