@@ -69,14 +69,14 @@ export default function Header() {
         <div className="flex justify-between items-center py-2">
           <Link href={"/"} className="flex items-center gap-3">
             <Image
-              src={"/logobeli.jpg"}
+              src={"/logobeli.png"}
               width={60}
               height={60}
               alt="patike za trcanje"
               className={` ${scrolled ? "hidden" : ""}`}
             />
             <Image
-              src={"/logocrni.jpg"}
+              src={"/logocrni.png"}
               width={60}
               height={60}
               alt="patike za trcanje"
@@ -89,7 +89,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex space-x-4 font-bold  text-lg">
+          <nav className="hidden lg:flex space-x-8 font-bold  text-2xl">
             <Link href="/" className=" relative group">
               Početna
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-[#494179]  transition-all duration-200 group-hover:w-full"></span>
@@ -105,11 +105,11 @@ export default function Header() {
               onMouseEnter={() => setIsCategoriesDropdownOpen(true)}
               onMouseLeave={() => setIsCategoriesDropdownOpen(false)}
             >
-              <button className="font-bold text-lg relative group flex items-center">
+              <button className="font-bold relative group flex items-center">
                 Kategorije
                 <span className="absolute -bottom-1 left-0 w-0 h-1 bg-[#494179] transition-all duration-200 group-hover:w-full"></span>
                 <svg 
-                  className={`ml-1 w-4 h-4 transition-transform duration-200 ${isCategoriesDropdownOpen ? 'rotate-180' : ''}`} 
+                  className={`ml-1 w-7 h-7 transition-transform duration-200 ${isCategoriesDropdownOpen ? 'rotate-180' : ''}`} 
                   fill="none" 
                   stroke="currentColor" 
                   viewBox="0 0 24 24"
