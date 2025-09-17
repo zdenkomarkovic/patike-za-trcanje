@@ -18,8 +18,17 @@ export const metadata = {
   description:
     "Profesionalne patike za trčanje raznih brendova. Za početnike, rekreativce i napredne trkače. Kvalitet i tradicija.",
   icons: {
-    icon: "/android-chrome-192x192.png",
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
     apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
+  keywords: ["", ""],
+  alternates: {
+    canonical: "https://",
   },
 };
 
