@@ -78,7 +78,7 @@ export const productsByCategoryQuery = `
       name,
       slug
     },
-    subcategory->{
+    subcategories[]->{
       _id,
       name,
       slug
@@ -112,7 +112,7 @@ export const subcategoryBySlugQuery = `
 `
 
 export const productsBySubcategoryQuery = `
-  *[_type == "product" && subcategory._ref == $subcategoryId && inStock == true] | order(order asc) {
+  *[_type == "product" && $subcategoryId in subcategories[]._ref && inStock == true] | order(order asc) {
     _id,
     name,
     brand,
@@ -123,7 +123,7 @@ export const productsBySubcategoryQuery = `
       name,
       slug
     },
-    subcategory->{
+    subcategories[]->{
       _id,
       name,
       slug

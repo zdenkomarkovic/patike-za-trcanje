@@ -33,11 +33,16 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      name: 'subcategory',
-      title: 'Podkategorija',
-      type: 'reference',
-      to: [{type: 'subcategory'}],
-      description: 'Opcionalna podkategorija'
+      name: 'subcategories',
+      title: 'Podkategorije',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'subcategory' }]
+        }
+      ],
+      description: 'Jedan proizvod može pripadati više podkategorija'
     },
     {
       name: 'shortDescription',
@@ -171,14 +176,16 @@ export default {
     select: {
       title: 'name',
       subtitle: 'category.name',
-      subcategory: 'subcategory.name',
+      subcategories: 'subcategories[].name',
       media: 'images.0'
     },
     prepare(selection) {
-      const { title, subtitle, subcategory } = selection;
+      const { title, subtitle } = selection;
+      const subList = Array.isArray(selection.subcategories) ? selection.subcategories.filter(Boolean) : [];
+      const subLabel = subList.length > 0 ? ` > ${subList.join(', ')}` : '';
       return {
         title: title,
-        subtitle: subcategory ? `${subtitle} > ${subcategory}` : subtitle,
+        subtitle: `${subtitle}${subLabel}`,
         media: selection.media
       };
     }

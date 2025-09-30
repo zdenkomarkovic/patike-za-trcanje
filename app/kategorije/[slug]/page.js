@@ -41,13 +41,14 @@ export default async function CategoryPage({ params, searchParams }) {
     // Fetch products for this category or subcategory
     let products;
     if (selectedSubcategory) {
-      // Filter products by subcategory
-      const allProducts = await client.fetch(productsByCategoryQuery, {
-        categoryId: category._id,
-      });
-      products = allProducts.filter(product => 
-        product.subcategory && product.subcategory.slug.current === selectedSubcategory
+      // Fetch products filtered by selected subcategory using GROQ (supports multiple subcategories)
+      const sub = await client.fetch(
+        `*[_type == "subcategory" && slug.current == $slug][0]{ _id }`,
+        { slug: selectedSubcategory }
       );
+      products = sub
+        ? await client.fetch(productsBySubcategoryQuery, { subcategoryId: sub._id })
+        : [];
     } else {
       // Show all products in category
       products = await client.fetch(productsByCategoryQuery, {
