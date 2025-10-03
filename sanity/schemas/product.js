@@ -175,18 +175,15 @@ export default {
   preview: {
     select: {
       title: 'name',
-      subtitle: 'category.name',
-      subcategories: 'subcategories[].name',
-      media: 'images.0'
+      brand: 'brand',
+      images: 'images'
     },
     prepare(selection) {
-      const { title, subtitle } = selection;
-      const subList = Array.isArray(selection.subcategories) ? selection.subcategories.filter(Boolean) : [];
-      const subLabel = subList.length > 0 ? ` > ${subList.join(', ')}` : '';
+      const { title, brand, images } = selection;
       return {
         title: title,
-        subtitle: `${subtitle}${subLabel}`,
-        media: selection.media
+        subtitle: brand,
+        media: images?.[0]
       };
     }
   }

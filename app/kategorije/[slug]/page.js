@@ -13,7 +13,8 @@ import CTASection from "@/app/components/sections/CTASection";
 
 export default async function CategoryPage({ params, searchParams }) {
   const { slug } = await params;
-  const selectedSubcategory = searchParams?.subcategory;
+  const awaitedSearchParams = await searchParams;
+  const selectedSubcategory = awaitedSearchParams?.subcategory;
   
   try {
     // Fetch category data
