@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getImageUrl } from "@/sanity/lib/image";
 import { client } from "@/sanity/lib/client";
 import ImageGallery from "@/app/components/ImageGalery";
+import { PortableText } from "@portabletext/react";
 
 export default async function ProductPage({ params }) {
   const { slug } = await params;
@@ -68,11 +69,11 @@ export default async function ProductPage({ params }) {
                   </Link>
                 )}
               </div>
-              <div className="prose max-w-none">
-                <p className=" text-lg leading-relaxed">
-                  {product.description}
-                </p>
-              </div>
+              {product.description && (
+                <div className="prose max-w-none text-lg leading-relaxed">
+                  <PortableText value={product.description} />
+                </div>
+              )}
 
               {product.longDescription && (
                 <div className="prose max-w-none">
