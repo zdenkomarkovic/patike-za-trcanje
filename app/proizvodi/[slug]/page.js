@@ -152,3 +152,5 @@ export const metadata = {
   title: "Proizvod - Saucony Shop",
   description: "Detaljne informacije o proizvodu",
 };
+
+export const dynamic = 'force-dynamic';
