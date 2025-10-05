@@ -42,7 +42,7 @@ export default function FeaturesSection() {
       ),
       title: "Pružamo najbolje.",
       description:
-        "Dugogodišnje iskustvo u prodaji, a pre svega u trčanju, nas izdvaja kao kompetentne za davanje saveta u kupovini patika za trčanje.",
+        "Dugogodišnje iskustvo u prodaji, a pre svega u trčanju, nas izdvaja kao kompetentne za davanje saveta u vezi kupovine patika za trčanje.",
       iconColor: "red",
     },
     {
@@ -63,7 +63,7 @@ export default function FeaturesSection() {
       ),
       title: "Raznovrsnost",
       description:
-        "Kod nas možete pronaći najtraženije i najkvalitetnije patike svih brendova, sa naprednim tehnologijama amortizacije za maksimalnu udobnost tokom trčanja.",
+        "Kod nas možete pronaći najtraženije i najkvalitetnije patike svih brendova, sa naprednim tehnologijama amortizacije za maksimalnu udobnost, stabilnost i brzinu tokom trčanja.",
       iconColor: "green",
     },
   ];
