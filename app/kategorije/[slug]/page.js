@@ -7,7 +7,6 @@ import {
   productsBySubcategoryCountQuery,
 } from "@/sanity/lib/queries";
 import { getImageUrl } from "@/sanity/lib/image";
-import Button from "@/app/components/ui/Button";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";

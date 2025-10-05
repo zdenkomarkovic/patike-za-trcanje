@@ -10,121 +10,82 @@ const TrailSection = () => {
       id: 1,
       title: "Kako izabrati prve trail patike?",
       content: (
-        <p className="text-lg leading-tight md:mt-14">
-          Ako tek ulazite u svet traila, univerzalne &quot;all terrain&quot;
-          patike mogu biti odličan izbor. One nisu namenjene za najzahtevnije
-          staze, ali su dobre za upoznavanje terena i prve kilometre van
-          asfalta. Kada osetite draž planinskih staza, prirodnih mirisa i svežeg
-          vazduha, verovatno ćete želeti specijalizovaniji model.
+        <p className="text-lg leading-tight">
+          Za početak birajte univerzalne (all-terrain) modele koji su pogodni za
+          blaže staze. Kada steknete više iskustva, preći ćete na
+          specijalizovanije varijante.
         </p>
       ),
     },
     {
       id: 2,
-      title: "Ključne razlike u odnosu na asfaltne patike",
+      title: "Ključne razlike u odnosu na gradske patike:",
       content: (
         <ul className="text-lg leading-tight space-y-2">
           <li className="flex items-start">
             <span className="font-bold mr-2">•</span>
-            <span>
-              Jača podrška stopalu, naročito u peti i bočnim delovima.
-            </span>
+            <span>Jača podrška u peti i bočnim stranama.</span>
           </li>
           <li className="flex items-start">
             <span className=" font-bold mr-2">•</span>
-            <span>
-              Robusniji đon sa kramponima – za bolje prijanjanje na mokrim i
-              klizavim površinama.
-            </span>
+            <span>Robustniji đon sa izraženim šarama.</span>
           </li>
           <li className="flex items-start">
             <span className="font-bold mr-2">•</span>
-            <span>
-              Otporniji materijali – izrađeni da izdrže kamenje, blato i vlagu.
-            </span>
+            <span>Materijali otporni na vlagu, blato i kamenje.</span>
           </li>
         </ul>
       ),
     },
     {
       id: 3,
-      title: "Veličina i fit",
+      title: "Veličina i udobnost",
       content: (
         <>
           <p className="text-lg leading-tight mb-1">
-            Kod trail patika obavezno uzimajte barem pola broja veće modele, jer
-            nizbrdo prsti udaraju o vrh patike. Tokom dugih trčanja stopalo
-            otiče, pa mnogi trkači biraju i za ceo broj veću patiku nego u
-            gradskoj obući. Kalupi se razlikuju:
-          </p>
-          <ul className=" text-lg leading-tight space-y-1 mb-1">
-            <li className="flex items-start">
-              <span className="   font-bold mr-2">•</span>
-              <span>
-                <span className="font-bold">Asics</span> – realne veličine.
-              </span>
-            </li>
-            <li className="flex items-start">
-              <span className=" font-bold mr-2">•</span>
-              <span>
-                <span className="font-bold">Adidas</span> – nešto manji kalup.
-              </span>
-            </li>
-            <li className="flex items-start">
-              <span className=" font-bold mr-2">•</span>
-              <span>
-                <span className="font-bold">Salomon</span> – uglavnom &quot;true
-                to size&quot;.
-              </span>
-            </li>
-          </ul>
-          <p className="text-lg leading-tight">
-            Takođe, obratite pažnju na širinu stopala – postoje uži i širi
-            modeli, što je često naglašeno u opisu proizvoda.
+            Uvek uzimajte barem pola broja veće od obične obuće – zbog oticanja
+            stopala i udaraca nizbrdo. Obratite pažnju i na širinu patike, jer
+            neki modeli dolaze u više širina.
           </p>
         </>
       ),
     },
     {
       id: 4,
-      title: "Stabilnost i vodonepropusnost",
+      title: "Stabilnost i zaštita",
       content: (
         <p className="  text-lg leading-tight">
-          Za početnike je uvek bolji izbor stabilniji model, sa ojačanjem pete i
-          širim đonom. Kada je reč o vodootpornosti, patike sa Gore-Tex slojem
-          korisne su u zimskim uslovima jer greju i čuvaju nogu od kvašenja.
-          Međutim, imajte u vidu da pri trčanju po kiši i snegu vlaga može ući
-          odozgo, pa je uvek moguće da stopala ipak budu mokra. Zato su mnogi
-          trkači skloniji modelima koji se brzo suše, umesto onih potpuno
-          zatvorenih....
+          Za početnike je bolji stabilniji model sa širim đonom. Vodootporne
+          patike su korisne u hladnim i vlažnim uslovima, ali modeli koji se
+          brzo suše često su praktičniji.
         </p>
       ),
     },
     {
       id: 5,
-      title: "Zaštita i tipovi trail patika",
+      title: "Vrste trail patika",
       content: (
         <ul className="text-lg leading-tight space-y-1">
           <li className="flex items-start">
             <span className=" font-bold mr-2">•</span>
             <span>
-              <span className="font-bold">Light trail</span> – lagani modeli za
-              parkove, makadam i blaže staze.
+              <span className="font-bold">Light trail</span> – za parkove i
+              lakše staze.
+            </span>
+          </li>
+
+          <li className="flex items-start">
+            <span className=" font-bold mr-2">•</span>
+            <span>
+              <span className="font-bold">Ultra trail</span> – sa dodatnim
+              slojevima i jakim kramponima.
             </span>
           </li>
           <li className="flex items-start">
             <span className=" font-bold mr-2">•</span>
             <span>
-              <span className="font-bold">Planinske patike</span> – robustniji
-              đon, često EVA pena za duže i zahtevnije uspone i spusteve.
-            </span>
-          </li>
-          <li className="flex items-start">
-            <span className=" font-bold mr-2">•</span>
-            <span>
-              <span className="font-bold">Tehnički teren</span> – poliuretanski
-              slojevi, dodatna punjenja i izraženi kramponi za maksimalnu
-              sigurnost na steni, blatu i snegu.
+              <span className="font-bold">Planinske patike</span> – za duže i
+              zahtevnije rute.
             </span>
           </li>
         </ul>
@@ -132,15 +93,12 @@ const TrailSection = () => {
     },
     {
       id: 6,
-      title: "Završna preporuka",
+      title: "Završni savet",
       content: (
         <p className="text-lg leading-tight">
-          Ne postoji savršena trail patika za svakog trkača. Najvažnije je da
-          odaberete model koji najbolje odgovara vašem stopalu i načinu trčanja.
-          Za prvi par izbegavajte previše specijalizovane modele – odaberite
-          udobne patike srednjeg ranga, koje će vas uvesti u svet trail trčanja.
-          A kada vam staze postanu svakodnevica, lako ćete pronaći model
-          prilagođen baš vašim potrebama.
+          Ne postoji idealna patika za sve. Počnite sa udobnim i univerzalnim
+          modelom. Kako rastete u iskustvu, lakše ćete prepoznati šta vam zaista
+          treba.
         </p>
       ),
     },
@@ -152,96 +110,50 @@ const TrailSection = () => {
         <h2 className="text-2xl  primary md:text-3xl font-bold mb-6 md:mb-10 text-center">
           Trail patike – vodič za trčanje u prirodi
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
-          <div className="space-y-4  ">
-            <p className="first-letter:pl-6">
-              Mnogi trkači koji se odluče da pređu sa asfalta na prirodne staze
-              shvate da im je potrebna posebna obuća. Za ovakve uslove postoje
-              trail patike, specijalno dizajnirane za brdske staze, šume,
-              makadam i sve vrste neravnih terena.
-            </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6 items-center">
+          <Card className="p-6">
+            <div className="space-y-4  ">
+              <p className="first-letter:pl-6">
+                Ako planirate da trčite van asfalta – po šumi, makadamu ili
+                planinskim stazama – potrebne su vam trail patike, posebno
+                dizajnirane za neravne terene.
+              </p>
 
-            <p className="first-letter:pl-6">
-              Za razliku od običnih patika za asfalt, trail modeli imaju nizak
-              profil bliži zemlji, što obezbeđuje stabilnost na neravnom terenu.
-              Đon je izrađen od izdržljivih gumenih i plastičnih delova koji
-              štite stopalo od kamenja i oštrih predmeta, dok je peta sa manjom
-              amortizacijom – jer se pretpostavlja da se trči na mekšim
-              podlogama poput zemlje, trave ili šumskih staza. Vrh patike
-              dodatno je ojačan kako bi prsti bili zaštićeni.
-            </p>
-            <Image
-              src="/2149157066.jpg"
-              alt="Trail patike"
-              width={1000}
-              height={1000}
-              className="rounded-3xl"
-            />
-          </div>
+              <p className="first-letter:pl-6 font-bold">
+                Za razliku od običnih patika za asfalt, trail modeli imaju:
+              </p>
+              <ul className="space-y-2 text-lg ">
+                <li className="">
+                  <span className="font-bold">
+                    Niži profil i stabilniji đon
+                  </span>{" "}
+                  – pružaju sigurnost na nepredvidivom terenu.
+                </li>
+                <li className="">
+                  <span className="font-bold">Ojačane delove</span> – štite
+                  prste i stopalo od kamenja i korenja.
+                </li>
+                <li className="">
+                  <span className="font-bold">Krampone</span> – poboljšavaju
+                  prijanjanje i sprečavaju klizanje.
+                </li>
+                <li className="">
+                  <span className="font-bold">Vodootporne materijale</span> –
+                  korisni u mokrim uslovima (npr. Gore-Tex).
+                </li>
+              </ul>
+            </div>
+          </Card>
 
           {/* Osnovne karakteristike trail patika */}
-          <Card className="p-6">
-            <h3 className=" font-bold mb-4 text-center ">
-              Osnovne karakteristike trail patika
-            </h3>
-            <ul className="space-y-2 text-lg ">
-              <li className="">
-                <span className="font-bold">Ojačan prednji deo</span> – guma ili
-                sintetička zaštita na vrhu prstiju sprečava povrede od kamenja i
-                korenja.
-              </li>
-              <li className="">
-                <span className="font-bold">Zaštitni gornji elementi</span> –
-                jači i izdržljiviji materijali od onih na asfaltnim patikama,
-                često i nepromočivi.
-              </li>
-              <li className="">
-                <span className="font-bold">Krampone (ripne) na đonu</span> –
-                omogućavaju bolje prijanjanje i smanjuju rizik od klizanja;
-                veličina zavisi od namene.
-              </li>
-              <li className="">
-                <span className="font-bold">Elementi stabilizacije</span> –
-                plastični ulošci u đonu koji smanjuju uvrtanje patike.
-              </li>
-              <li className="">
-                <span className="font-bold">Povišeni bočni delovi đona</span> –
-                deluju kao &quot;blatobrani&quot; i sprečavaju ulazak blata i
-                vode.
-              </li>
-              <li className="">
-                <span className="font-bold">
-                  Pertle ili brzi sistem vezivanja
-                </span>{" "}
-                – klasičan izbor kod većine modela, ali neki imaju i inovativna
-                rešenja.
-              </li>
-              <li className="">
-                <span className="font-bold">Jezičak sa džepom za pertle</span> –
-                sprečava kačenje o granje i slučajno odvezivanje.
-              </li>
-              <li className="">
-                <span className="font-bold">Unutrašnja postava</span> – brzo se
-                suši i pruža dodatnu zaštitu peti.
-              </li>
-              <li className="">
-                <span className="font-bold">Gornji materijal</span> –
-                kombinacija mrežastih i vodonepropusnih slojeva (često
-                Gore-Tex).
-              </li>
-              <li className="">
-                <span className="font-bold">
-                  Ušice za brzo obuvanje i kačenje
-                </span>{" "}
-                – praktičan detalj kod modernih modela.
-              </li>
-              <li className="">
-                <span className="font-bold">Povijeni zadnji deo đona</span> –
-                daje bolji kontakt sa neravnom podlogom i sigurnije kočenje
-                nizbrdo.
-              </li>
-            </ul>
-          </Card>
+
+          <Image
+            src="/2149157066.jpg"
+            alt="Trail patike"
+            width={1000}
+            height={1000}
+            className="rounded-3xl"
+          />
         </div>
         {/* Poslednje 6 kartica u grid-cols-3 */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
