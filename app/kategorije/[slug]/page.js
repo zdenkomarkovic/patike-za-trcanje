@@ -11,6 +11,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import CTASection from "@/app/components/sections/CTASection";
+import SubcategorySelect from "@/app/components/SubcategorySelect";
 
 const PRODUCTS_PER_PAGE = 9;
 
@@ -111,23 +112,24 @@ export default async function CategoryPage({ params, searchParams }) {
 
         {/* Subcategories Section */}
         {category.subcategories && category.subcategories.length > 0 && (
-          <div className="max-w-7xl  mx-auto px-4 flex flex-wrap justify-center gap-4 mt-4">
-            {/* All products button */}
-            <Link
-              href={`/kategorije/${category.slug.current}`}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${
-                !selectedSubcategory
-                  ? "bg-[#494179] text-white shadow-lg"
-                  : "bg-white text-gray-700 border border-gray-300 hover:border-[#494179] hover:text-[#494179]"
-              }`}
-            >
-              Sve podkategorije
-            </Link>
+          <>
+            {/* Desktop - Buttons */}
+            <div className="max-w-7xl mx-auto px-4 hidden md:flex flex-wrap justify-center gap-4 mt-4">
+              {/* All products button */}
+              <Link
+                href={`/kategorije/${category.slug.current}`}
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${
+                  !selectedSubcategory
+                    ? "bg-[#494179] text-white shadow-lg"
+                    : "bg-white text-gray-700 border border-gray-300 hover:border-[#494179] hover:text-[#494179]"
+                }`}
+              >
+                Sve podkategorije
+              </Link>
 
-            {/* Subcategory buttons */}
-            {category.subcategories && category.subcategories.length > 0 ? (
-              category.subcategories
-                .filter((sub) => sub.isActive !== false) // Show all if isActive is undefined
+              {/* Subcategory buttons */}
+              {category.subcategories
+                .filter((sub) => sub.isActive !== false)
                 .sort((a, b) => (a.order || 0) - (b.order || 0))
                 .map((subcategory) => (
                   <Link
@@ -141,13 +143,17 @@ export default async function CategoryPage({ params, searchParams }) {
                   >
                     {subcategory.name}
                   </Link>
-                ))
-            ) : (
-              <div className="text-gray-500 italic">
-                Nema podkategorija za ovu kategoriju
-              </div>
-            )}
-          </div>
+                ))}
+            </div>
+
+            {/* Mobile - Dropdown */}
+            <div className="max-w-7xl mx-auto px-4 md:hidden mt-4">
+              <SubcategorySelect
+                category={category}
+                selectedSubcategory={selectedSubcategory}
+              />
+            </div>
+          </>
         )}
 
         {/* Products Section */}
