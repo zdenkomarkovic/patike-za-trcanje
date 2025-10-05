@@ -30,78 +30,17 @@ export default function AboutSection() {
                 vodećim imenima u trkačkom svetu, zahvaljujući inovativnim
                 modelima i stalnom ulaganju u tehnologiju.
               </p>
-
-              <Image
-                src="/logo.svg"
-                alt="Saucony Logo"
-                width={1000}
-                height={1000}
-                className="w-full h-full mt-14"
-              />
             </div>
           </div>
-          <div className="relative p-4 md:p-6 bg-white rounded-2xl ">
-            <ul className=" text-base relative z-20 ">
-              <li className="font-bold">
-                Ključni trenuci iz istorije Saucony-ja
-              </li>
-              <li>• 1896 – prvi olimpijski maraton u Atini</li>
-              <li>• 1897 – prvi Bostonski maraton</li>
-              <li>
-                1898. – četvorica prijatelja osnivaju{" "}
-                <span className="font-bold">
-                  Saucony Shoe Manufacturing Company u Kutztownu
-                </span>
-                .
-              </li>
-              <li>
-                Do <span className="font-bold">1910</span>. fabrika, smeštena u
-                staroj ciglani pored reke Saucony, proizvodila je oko 800 pari
-                patika dnevno.
-              </li>
-              <li>
-                Tokom prve polovine 20. veka trčanje postaje sport ozbiljnih
-                atleta, a Saucony prepoznaje priliku da razvije pravu sportsku
-                obuću, za razliku od tadašnjih kožnih patika sa šiljcima ili
-                trčanja bosonogo.
-              </li>
-              <li>
-                Do <span className="font-bold">1958</span>. proizvedeno je 7446
-                ultra laganih patika sa šiljcima, napravljenih od kengurove kože
-                – preteča današnjih sprinterica.
-              </li>
-              <li>
-                <span className="font-bold">1968</span>. fabrika se seli u
-                Cambridge, Massachusetts – dom Bostonskog maratona.
-              </li>
-              <li>
-                <span className="font-bold">1972</span>. američki maratonac
-                Frank Shorter osvaja zlato na Olimpijskim igrama, što izaziva
-                pravu trkačku revoluciju u SAD-u, a Saucony dobija još veću
-                popularnost.
-              </li>
-              <li>
-                <span className="font-bold">1977</span>. brend dobija priznanje
-                za
-                <span className="italic">Best quality shoes</span>.
-              </li>
-
-              <li className="font-bold">
-                Tokom osamdesetih nastaju kultni modeli koji su i danas
-                popularni:
-              </li>
-              <li>1980 – TRAINER 80</li>
-              <li>1981 – JAZZ</li>
-              <li>1984 – DXN TRAINER</li>
-              <li>1988 – SHADOW</li>
-              <li>1991 – GRID</li>
-
-              <li>
-                Ovi modeli danas pripadaju liniji{" "}
-                <span className="font-bold">Saucony Originals</span>, koja
-                kombinuje sportsko nasleđe i lifestyle dizajn.
-              </li>
-            </ul>
+          <div className="relative rounded-2xl overflow-hidden">
+            {" "}
+            <Image
+              src="/20251004_215214.jpg"
+              alt="Saucony Logo"
+              width={1000}
+              height={1000}
+              className="w-full h-full"
+            />
           </div>
         </div>
         <div className="space-y-4  text-gray-600 leading-relaxed mt-10">
