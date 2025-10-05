@@ -67,7 +67,7 @@ export const productsQuery = `
 `
 
 export const productsByCategoryQuery = `
-  *[_type == "product" && category._ref == $categoryId && inStock == true] | order(order asc) {
+  *[_type == "product" && category._ref == $categoryId && inStock == true] | order(order asc) [$offset...$limit] {
     _id,
     name,
     brand,
@@ -94,6 +94,10 @@ export const productsByCategoryQuery = `
     featured,
     inStock
   }
+`
+
+export const productsByCategoryCountQuery = `
+  count(*[_type == "product" && category._ref == $categoryId && inStock == true])
 `
 
 export const subcategoryBySlugQuery = `
@@ -112,7 +116,7 @@ export const subcategoryBySlugQuery = `
 `
 
 export const productsBySubcategoryQuery = `
-  *[_type == "product" && $subcategoryId in subcategories[]._ref && inStock == true] | order(order asc) {
+  *[_type == "product" && $subcategoryId in subcategories[]._ref && inStock == true] | order(order asc) [$offset...$limit] {
     _id,
     name,
     brand,
@@ -139,6 +143,10 @@ export const productsBySubcategoryQuery = `
     featured,
     inStock
   }
+`
+
+export const productsBySubcategoryCountQuery = `
+  count(*[_type == "product" && $subcategoryId in subcategories[]._ref && inStock == true])
 `
 
 export const featuredProductsQuery = `

@@ -7,7 +7,7 @@ export default function HeroSection({ title, subtitle, description, image }) {
         src={image.src}
         alt={image.alt}
         fill
-        className=" w-full object-cover [object-position:50%_100%]"
+        className=" w-full object-cover [object-position:50%_75%]"
       />
       <div className="absolute inset-0 bg-black/50"></div>
       <div className="container mx-auto px-4 md:px-20 py-16 md:py-24 relative h-full flex flex-col gap-8 justify-end">

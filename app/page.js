@@ -22,7 +22,7 @@ export default async function HomePage() {
       href: "/proizvodi",
     },
     image: {
-      src: "/hero.jpg",
+      src: "/20251004_220326.jpg",
       alt: "Saucony patike za trčanje",
     },
   };

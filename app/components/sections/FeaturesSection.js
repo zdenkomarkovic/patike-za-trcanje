@@ -72,8 +72,8 @@ export default function FeaturesSection() {
     <div className="bg-[#e6e0f8] py-8 md:py-16">
       <div className="container mx-auto px-2 md:px-10">
         <SectionHeader
-          title="Zašto izabrati Saucony Shop?"
-          description="Dugogodisnje iskustvo u prodaji a jos duze u trcanju"
+          title="Zašto izabrati Sesame Shop?"
+          description="Dugogodišnje iskustvo u prodaji, a jos duže u trčanju"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
