@@ -96,7 +96,7 @@ const TrailSection = () => {
           Međutim, imajte u vidu da pri trčanju po kiši i snegu vlaga može ući
           odozgo, pa je uvek moguće da stopala ipak budu mokra. Zato su mnogi
           trkači skloniji modelima koji se brzo suše, umesto onih potpuno
-          zatvorenih.
+          zatvorenih....
         </p>
       ),
     },
