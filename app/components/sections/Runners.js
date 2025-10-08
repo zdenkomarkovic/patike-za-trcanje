@@ -18,10 +18,10 @@ const Runners = () => {
           </p>
 
           <p className="first-letter:pl-6">
-            Trenažne patike su trajnije, jeftinije i udobnije od takmičarskih.
-            Nude osnovnu amortizaciju radi zaštite zglobova, ali su i otporne na
-            bočne sile koje nastaju pri promeni pravca, za razliku od
-            takmičarskih modela.
+            Patike za treniranje su trajnije, jeftinije i udobnije od
+            takmičarskih. Nude osnovnu amortizaciju radi zaštite zglobova, ali
+            su i otporne na bočne sile koje nastaju pri promeni pravca, za
+            razliku od takmičarskih modela.
           </p>
           <p className="first-letter:pl-6">Kod izbora obratite pažnju na:</p>
 
@@ -30,47 +30,47 @@ const Runners = () => {
               <span className="    font-bold mr-2">•</span>
               <span>
                 <span className="font-bold">Tip stopala i pronaciju</span> –
-                ključni faktor za prevenciju povreda
+                ključni faktor za prevenciju povreda.
               </span>
             </li>
             <li className="flex items-start">
               <span className=" font-bold mr-2">•</span>
               <span>
                 <span className="font-bold">Udobnost i fleksibilnost</span> – da
-                ne stvaraju žuljeve
+                ne stvaraju žuljeve.
               </span>
             </li>
             <li className="flex items-start">
               <span className=" font-bold mr-2">•</span>
               <span>
                 <span className="font-bold">Ventilaciju i zaštitu</span> – za
-                sve vremenske uslove
+                sve vremenske uslove.
               </span>
             </li>
             <li className="flex items-start">
               <span className=" font-bold mr-2">•</span>
               <span>
                 <span className="font-bold">Đon</span> – da pruža sigurnost na
-                raznim podlogama
+                raznim podlogama.
               </span>
             </li>
             <li className="flex items-start">
               <span className=" font-bold mr-2">•</span>
               <span>
-                <span className="font-bold">Cenu</span> – važna za rekreativce
+                <span className="font-bold">Cenu</span> – važna za rekreativce.
               </span>
             </li>
             <li className="flex items-start">
               <span className=" font-bold mr-2">•</span>
               <span>
                 <span className="font-bold">Održavanje</span> – da se lako peru
-                i čiste
+                i čiste.
               </span>
             </li>
           </ul>
           <p className="first-letter:pl-6">
-            Trenažne patike su pogodne za sve nivoe rekreativaca, a kvalitetne
-            modele možete povoljno naći tokom sezonskih rasprodaja.
+            Patike za treniranje su pogodne za sve nivoe rekreativaca, a
+            kvalitetne modele možete povoljno naći tokom sezonskih rasprodaja.
           </p>
         </div>
       </div>

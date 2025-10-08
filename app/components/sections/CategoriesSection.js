@@ -11,7 +11,7 @@ export default function CategoriesSection({ categories }) {
           Kategorije patika
         </h2>
         <p className="text-center pb-8 md:pb-16 text-[#494179]">
-          Pronađite savršene patike za vaš stil trčanja i nivo iskustva
+          Pronađite savršene patike za vaš stil trčanja i nivo iskustva.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

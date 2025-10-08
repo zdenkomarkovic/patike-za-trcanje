@@ -21,7 +21,7 @@ const AboutMe = () => {
               Izabrao sam u outletu takav par, uveren da ću sa njima biti brži i
               bolji. Međutim, već na kraju trke shvatio sam da to nije bio pravi
               izbor – dobio sam ozbiljne žuljeve i naučio prvu veliku lekciju:
-              <span className="font-bold text-[#FF7A59]">
+              <span className="font-bold text-[#f5b800]">
                 {" "}
                 nije svaka patika, dobra patika za trčanje
               </span>
@@ -62,7 +62,7 @@ const AboutMe = () => {
             nabavim po svaku cenu. Preko prijatelja sam uspeo da ga poručim iz
             Nemačke i već na jesen 2022. pojavio sam se na trci 10K u svom
             novom, žutom Axon 2 modelu,{" "}
-            <span className="font-bold text-[#FF7A59]">
+            <span className="font-bold text-[#f5b800]">
               {" "}
               potpuno neočekivano nekoliko trkača me je zaustavljalo i pitalo
               gde sam ja to našao, da li mogu i njima da nabavim.

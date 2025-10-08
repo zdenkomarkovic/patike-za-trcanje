@@ -19,7 +19,7 @@ const TrailSection = () => {
     },
     {
       id: 2,
-      title: "Ključne razlike u odnosu na gradske patike:",
+      title: "Ključne razlike u odnosu na patike za asfalt:",
       content: (
         <ul className="text-lg leading-tight space-y-2">
           <li className="flex items-start">
@@ -28,7 +28,7 @@ const TrailSection = () => {
           </li>
           <li className="flex items-start">
             <span className=" font-bold mr-2">•</span>
-            <span>Robustniji đon sa izraženim šarama.</span>
+            <span>Robusniji đon sa izraženim šarama.</span>
           </li>
           <li className="flex items-start">
             <span className="font-bold mr-2">•</span>
@@ -78,14 +78,14 @@ const TrailSection = () => {
             <span className=" font-bold mr-2">•</span>
             <span>
               <span className="font-bold">Ultra trail</span> – sa dodatnim
-              slojevima i jakim kramponima.
+              slojevima i jakim kramponima, za duže i teže staze.
             </span>
           </li>
           <li className="flex items-start">
             <span className=" font-bold mr-2">•</span>
             <span>
-              <span className="font-bold">Planinske patike</span> – za duže i
-              zahtevnije rute.
+              <span className="font-bold">Planinske patike</span> – za duže
+              pešačenje na zahtevnijim rutama.
             </span>
           </li>
         </ul>
@@ -148,11 +148,11 @@ const TrailSection = () => {
           {/* Osnovne karakteristike trail patika */}
 
           <Image
-            src="/2149157066.jpg"
+            src="/20251008_124707.jpg"
             alt="Trail patike"
             width={1000}
             height={1000}
-            className="rounded-3xl"
+            className="rounded-3xl aspect-[9/6] object-cover"
           />
         </div>
         {/* Poslednje 6 kartica u grid-cols-3 */}

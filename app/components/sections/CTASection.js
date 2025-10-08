@@ -3,7 +3,7 @@ import Button from "../ui/Button";
 
 export default function CTASection({
   title = "Potrebne su vam patike za trčanje?",
-  description = "Kontaktirajte nas za savet o izboru pravih patika za vaš stil trčanja",
+  description = "Kontaktirajte nas za savet o izboru pravih patika za vaš stil trčanja.",
   primaryAction,
   secondaryAction,
 }) {
