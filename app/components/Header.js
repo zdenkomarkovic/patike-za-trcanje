@@ -130,7 +130,7 @@ export default function Header() {
 
               {/* Dropdown Menu */}
               <div
-                className={`absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 z-50 transition-all duration-200 ${
+                className={`absolute top-full left-0 mt-2 w-fit bg-white rounded-lg shadow-xl border border-gray-200 z-50 transition-all duration-200 ${
                   isCategoriesDropdownOpen
                     ? "opacity-100 visible translate-y-0"
                     : "opacity-0 invisible -translate-y-2"
