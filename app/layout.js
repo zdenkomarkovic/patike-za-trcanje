@@ -28,7 +28,7 @@ export const metadata = {
   manifest: "/site.webmanifest",
   keywords: ["", ""],
   alternates: {
-    canonical: "https://",
+    canonical: "https://patikezatrcanje.rs",
   },
 };
 
