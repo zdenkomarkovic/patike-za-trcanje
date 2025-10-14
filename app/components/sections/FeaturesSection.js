@@ -73,7 +73,7 @@ export default function FeaturesSection() {
       <div className="container mx-auto px-2 md:px-10">
         <SectionHeader
           title="Zašto izabrati Sesame Shop?"
-          description="Dugogodišnje iskustvo u prodaji, a jos duže u trčanju"
+          description="Dugogodišnje iskustvo u prodaji, a jos duže u trčanju."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

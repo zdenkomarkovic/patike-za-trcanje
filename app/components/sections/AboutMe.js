@@ -10,7 +10,7 @@ const AboutMe = () => {
           mi se atmosfera među trkačima i nekako sam tu sebe pronašao.{" "}
         </h2>
 
-        <div className="flex flex-col md:flex-row gap-6 items-center mb-6">
+        <div className="flex flex-col md:flex-row gap-6 items-center text-center mb-6">
           {" "}
           <div className="md:space-y-6 ">
             <p className="first-letter:pl-6">
@@ -23,9 +23,8 @@ const AboutMe = () => {
               izbor – dobio sam ozbiljne žuljeve i naučio prvu veliku lekciju:
               <span className="font-bold text-[#f5b800]">
                 {" "}
-                nije svaka patika, dobra patika za trčanje
+                nije svaka patika, dobra patika za trčanje.
               </span>
-              .
             </p>
             <p className="first-letter:pl-6">
               Sledeće godine prijavio sam se za trku na 10 kilometara, ali ovog
@@ -54,7 +53,7 @@ const AboutMe = () => {
             alt="patike za trcanje"
             className="rounded-xl w-full md:w-[350px] aspect-[10/13] object-cover  object-bottom"
           />
-          <p className="first-letter:pl-6">
+          <p className="first-letter:pl-6  text-center">
             Od 2019. do 2021, zbog pandemije korone, nisam bio aktivan na
             trkama, ali sam nastavio da proučavam trkačku opremu i posebno
             modele patika za trčanje. Krajem 2021. pojavio se model Saucony Axon
@@ -77,7 +76,7 @@ const AboutMe = () => {
           </p>
         </div>
         <div className="flex flex-col md:flex-row items-center gap-6 ">
-          <div className="space-y-6">
+          <div className="space-y-6  text-center">
             <p className="first-letter:pl-6">
               U proleće 2023. u Srbiju je stigao moj prvi paket – pet pari
               Saucony modela:

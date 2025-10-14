@@ -25,10 +25,10 @@ export default function FeatureCard({
       }}
     >
       <Card className="primarybg  text-white h-full" {...props}>
-        <CardContent className="p-6">
+        <CardContent className="p-6 text-center">
           <div
             className={cn(
-              "w-16 h-16 rounded-xl flex items-center justify-center "
+              "w-16 h-16 rounded-xl flex items-center justify-center mx-auto"
             )}
           >
             {icon}

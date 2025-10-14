@@ -27,8 +27,8 @@ export default function Footer() {
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
               Profesionalne patike za trčanje Sesame Shop. Za početnike,
-              rekreativce i napredne trkače. Kvalitet i tradicija vec dugi niz
-              godine.
+              rekreativce i napredne trkače. Kvalitet i tradicija već dugi niz
+              godina.
             </p>
             <div className="flex space-x-4">
               <a

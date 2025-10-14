@@ -13,14 +13,14 @@ const Runners = () => {
             Početnici brzo shvate da im treba više od jednog para patika – jedne
             za takmičenja, druge za svakodnevni trening. Trening se često odvija
             na različitim podlogama (asfalt, zemlja, trava, šuma), pa je važno
-            imati univerzalne patike koje pružaju stabilnost, udobnost i osnovnu
-            zaštitu bez obzira na teren.
+            imati patike koje pružaju stabilnost, udobnost i osnovnu zaštitu
+            prema podlozi po kojoj trče.
           </p>
 
           <p className="first-letter:pl-6">
             Patike za treniranje su trajnije, jeftinije i udobnije od
             takmičarskih. Nude osnovnu amortizaciju radi zaštite zglobova, ali
-            su i otporne na bočne sile koje nastaju pri promeni pravca, za
+            su i otpornije na bočne sile koje nastaju pri promeni pravca, za
             razliku od takmičarskih modela.
           </p>
           <p className="first-letter:pl-6">Kod izbora obratite pažnju na:</p>
