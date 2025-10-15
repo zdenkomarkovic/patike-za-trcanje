@@ -200,6 +200,13 @@ export default function Header() {
               >
                 Početna
               </Link>
+              <Link
+                href="/#o-meni"
+                onClick={closeMenu}
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors py-2 px-4 rounded-md hover:bg-gray-50"
+              >
+                O meni
+              </Link>
 
               {/* Categories Dropdown for Mobile */}
               <div className="border-b border-gray-200">
