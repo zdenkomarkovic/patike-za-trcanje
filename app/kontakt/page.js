@@ -368,6 +368,40 @@ export default function ContactPage() {
             </div>
 
             <div className="primarybg rounded-xl p-6">
+              <h3 className="text-lg font-semibold mb-3">Kako da poručim?</h3>
+              <div className="space-y-3">
+                <p className="">
+                  <strong>1</strong> Odredite koliki vam je budžet za patike
+                  koje želite da kupite,
+                </p>
+                <p className="">
+                  <strong>2</strong> Izaberete neki od modela sa aktuelne ponude
+                  ili ako nema u ponudi zatražite informaciju,
+                </p>
+                <p className="">
+                  <strong>3</strong> Uplaćujete na dan poručivanja iznos u
+                  dinarima u celosti,
+                </p>
+                <p className="">
+                  <strong>4</strong> Poručujemo,
+                </p>
+                <p className="">
+                  <strong>5</strong> Po obrađenoj porudžbini dobijate potvrdu o
+                  poručenom proizvodu, sa konkretnim podacima o veličini,
+                  dezenu, ceni i datumu poručivanja sa brojem porudžbine,
+                </p>
+                <p className="">
+                  <strong>6</strong> Nakon 15 +/- dana stižu u Srbiju
+                </p>
+                <p className="">
+                  <strong>7</strong> Lično preuzimanje na teritoriji Beograda
+                  ili slanjem na vašu adresu Postexpress-om uz plaćanje dostave
+                  pouzećem.
+                </p>
+              </div>
+            </div>
+
+            <div className="primarybg rounded-xl p-6">
               <h3 className="text-lg font-semibold mb-3">
                 Koja je razlika između patika za početnike i naprednih trkača?
               </h3>

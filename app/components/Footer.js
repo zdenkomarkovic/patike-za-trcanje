@@ -7,9 +7,9 @@ export default function Footer() {
   return (
     <footer className="primarybg text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-1">
           {/* Company Info */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-3">
             <div className="flex items-center gap-3 mb-6">
               <Image
                 src={"/logo.jpg"}
@@ -49,7 +49,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="lg:col-span-2">
             <h3 className="text-lg font-semibold mb-6">Brzi linkovi</h3>
             <ul className="space-y-4">
               {SITE_CONFIG.navigation.main.map((item) => (
@@ -66,7 +66,7 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="lg:col-span-2">
             <h3 className="text-lg font-semibold mb-6">Kontakt</h3>
             <div className="space-y-4">
               <div className="flex items-start">

@@ -38,7 +38,7 @@ const AboutMe = () => {
             </p>{" "}
           </div>
           <Image
-            src={"/20251005_033409.jpg"}
+            src={"/prva.jpg"}
             width={400}
             height={500}
             alt="patike za trcanje"
@@ -47,7 +47,7 @@ const AboutMe = () => {
         </div>
         <div className="flex flex-col-reverse md:flex-row items-center gap-6 md:gap-12 mb-6 md:mb-10">
           <Image
-            src={"/20251005_033426.jpg"}
+            src={"/druga.jpg"}
             width={400}
             height={500}
             alt="patike za trcanje"
