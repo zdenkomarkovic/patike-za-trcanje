@@ -13,7 +13,7 @@ export const SITE_CONFIG = {
     phone: "+381 64 382 4647",
     email: "sesameshopsportstore@gmail.com",
     instagram: "@patikezatrcanje.de",
-    instagramUrl: "https://www.instagram.com/patikezatrcanje.de/",
+    instagramUrl: "https://www.instagram.com/patikezatrcanje.rs/",
   },
 
   navigation: {
