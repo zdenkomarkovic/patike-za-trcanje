@@ -4,8 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 
 export default function CTASection({
-  title = "Ostvarite dodatan popust na prvi poručeni par!",
-  description = "Prijavite se na naš newsletter i dobijte ekskluzivnu ponudu.",
+  title = "Potrebne su vam patike za trčanje?",
+  description = "Kontaktirajte nas za savet o izboru pravih patika za vaš stil trčanja.",
 }) {
   const [email, setEmail] = useState("");
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
@@ -31,26 +31,38 @@ export default function CTASection({
     <div className="text-center py-8 md:py-16 bg-[#494179]">
       <div className="max-w-4xl text-white mx-auto px-4">
         <h2 className="text-3xl lg:text-4xl font-bold mb-6">{title}</h2>
-        <p className="text-xl mb-8">{description}</p>
+        <p className="text-xl mb-4">{description}</p>
+        <p className="text-3xl mb-6">
+          Ostvarite dodatan popust na prvi poručeni par
+        </p>
 
         {submitted ? (
           <div className="bg-green-500 text-white py-4 px-6 rounded-lg inline-block">
             Hvala! Uskoro ćete dobiti popust na svoj email.
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-            <div className="mb-4">
+          <form
+            onSubmit={handleSubmit}
+            className="max-w-md mx-auto grid grid-cols-3 gap-3"
+          >
+            <div className=" col-span-2">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Unesite vašu email adresu"
                 required
-                className="w-full px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#FF7A59]"
+                className="w-full px-4 py-3 rounded-lg outline-white border-white border-1 "
               />
             </div>
 
-            <div className="mb-6 flex items-start gap-2 text-left">
+            <button
+              type="submit"
+              className="w-full bg-[#FF7A59] text-white py-1 px-4 rounded-lg font-semibold hover:bg-[#ff8a6d] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FF7A59] focus:ring-offset-2 focus:ring-offset-[#494179]"
+            >
+              Pošaljite
+            </button>
+            <div className="mb-6 flex items-start gap-2 text-left col-span-3">
               <input
                 type="checkbox"
                 id="privacy-checkbox"
@@ -70,13 +82,6 @@ export default function CTASection({
                 </Link>
               </label>
             </div>
-
-            <button
-              type="submit"
-              className="w-full bg-[#FF7A59] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#ff8a6d] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FF7A59] focus:ring-offset-2 focus:ring-offset-[#494179]"
-            >
-              Pošaljite
-            </button>
           </form>
         )}
       </div>
