@@ -6,10 +6,7 @@ export async function POST(request) {
     const { email } = await request.json();
 
     if (!email) {
-      return NextResponse.json(
-        { error: "Email je obavezan" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Email je obavezan" }, { status: 400 });
     }
 
     // Validacija email formata
@@ -43,7 +40,7 @@ export async function POST(request) {
           <p>Novi korisnik se prijavio za newsletter:</p>
           <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin: 20px 0;">
             <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Datum:</strong> ${new Date().toLocaleString('sr-RS')}</p>
+            <p><strong>Datum:</strong> ${new Date().toLocaleString("sr-RS")}</p>
           </div>
         </div>
       `,
@@ -77,6 +74,7 @@ export async function POST(request) {
             <p style="font-size: 14px; color: #666;">
               Ako imate bilo kakvih pitanja, slobodno nas kontaktirajte.
             </p>
+            <a href="mailtto:sesameshopsportstore@gmail.com" >sesameshopsportstore@gmail.com</a>
           </div>
 
           <div style="background-color: #494179; padding: 20px; text-align: center;">
