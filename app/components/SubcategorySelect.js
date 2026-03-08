@@ -17,10 +17,9 @@ export default function SubcategorySelect({ category, selectedSubcategory }) {
       }}
       className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-700 font-medium focus:outline-none focus:ring-2 focus:ring-[#494179] focus:border-transparent"
     >
-      <option value="">Sve podkategorije</option>
+      <option value="">{category.slug.current === 'brendovi' ? 'Svi brendovi' : 'Sve podkategorije'}</option>
       {category.subcategories
         .filter((sub) => sub.isActive !== false)
-        .sort((a, b) => (a.order || 0) - (b.order || 0))
         .map((subcategory) => (
           <option
             key={subcategory._id}

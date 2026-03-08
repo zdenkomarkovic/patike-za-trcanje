@@ -29,24 +29,6 @@ export default async function CategoryPage({ params, searchParams }) {
       notFound();
     }
 
-    // Fetch subcategories for this category
-    const subcategories = await client.fetch(
-      `
-      *[_type == "subcategory" && parentCategory._ref == $categoryId && isActive == true] | order(order asc) {
-        _id,
-        name,
-        slug,
-        description,
-        order,
-        isActive
-      }
-    `,
-      { categoryId: category._id }
-    );
-
-    // Add subcategories to category object
-    category.subcategories = subcategories;
-
     // Calculate pagination
     const offset = (currentPage - 1) * PRODUCTS_PER_PAGE;
     const limit = offset + PRODUCTS_PER_PAGE;
@@ -124,13 +106,12 @@ export default async function CategoryPage({ params, searchParams }) {
                     : "bg-white text-gray-700 border border-gray-300 hover:border-[#494179] hover:text-[#494179]"
                 }`}
               >
-                Sve podkategorije
+                {category.slug.current === 'brendovi' ? 'Svi brendovi' : 'Sve podkategorije'}
               </Link>
 
               {/* Subcategory buttons */}
               {category.subcategories
                 .filter((sub) => sub.isActive !== false)
-                .sort((a, b) => (a.order || 0) - (b.order || 0))
                 .map((subcategory) => (
                   <Link
                     key={subcategory._id}

@@ -2,6 +2,7 @@
 import CategoriesSection from "./components/sections/CategoriesSection";
 import AboutSection from "./components/sections/AboutSection";
 import FeaturesSection from "./components/sections/FeaturesSection";
+import TestimonialsSection from "./components/sections/TestimonialsSection";
 import CTASection from "./components/sections/CTASection";
 import { getCategories } from "../sanity/lib/data";
 import TrailSection from "./components/sections/TrailSection";
@@ -33,6 +34,7 @@ export default async function HomePage() {
       <CategoriesSection categories={categories} />
       <CTASection />
       <FeaturesSection />
+      <TestimonialsSection />
       <Runners />
       <TrailSection />
       <AboutMe />
