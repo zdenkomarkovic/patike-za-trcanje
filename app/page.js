@@ -11,7 +11,8 @@ import AboutMe from "./components/sections/AboutMe";
 
 export default async function HomePage() {
   // Dohvatanje kategorija iz Sanity CMS-a
-  const categories = await getCategories();
+  const allCategories = await getCategories();
+  const categories = allCategories.filter((c) => c.name !== "Brendovi");
 
   const heroData = {
     title: "Sesame Shop",

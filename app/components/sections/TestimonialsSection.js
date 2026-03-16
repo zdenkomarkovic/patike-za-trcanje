@@ -1,6 +1,135 @@
+"use client";
+
+import { useState } from "react";
 import SectionHeader from "../ui/SectionHeader";
 
 const testimonials = [
+  {
+    name: "Lana Gavrilović",
+    role: "Prvakinja IronMan 2025",
+    text: "New Balance Fresh Foam 1080 v14 mi je legla odmah – jako mekana i udobna. Na asfaltu daje baš prijatan, 'gladak' korak i dobro upija udarce. Posle trčanja noge su mi dosta svežije nego u tvrđim patikama. Patika koju obuješ i samo trčiš. Udobna, mekana i pouzdana za svakodnevne kilometre.",
+    rating: 5,
+    initials: "LG",
+  },
+  {
+    name: "Jelena Zukorlic",
+    role: "Rekreativac na 21K",
+    text: "Hoka Mach X 2 – posle perioda privikavanja istrčan polumaraton u njima. Osećaj jako lagane patike, stabilne a light. Posle 20 km i dalje odličan osećaj, udobne i reaktivne. Razmišljam da trčim maraton u njima – stopala i noge odmorne. Apsolutno preporučujem!",
+    rating: 5,
+    initials: "JZ",
+  },
+  {
+    name: "Momir Kuljanin",
+    role: "Fitnes instruktor",
+    text: "Puma Fast-R Nitro Elite – carbon plate daje odličan odgovor i na stazi i na betonu. Potpuna udobnost, noge nakon trčanja su lagane, nikakvu neprijatnost nisam osetio ni u listovima ni Ahilovoj tetivi. Zbog kvaliteta i odnosa cene uzeo sam preko 5 pari. Svaka preporuka!",
+    rating: 5,
+    initials: "MK",
+  },
+  {
+    name: "Tanja Maljković",
+    role: "Trail rekreativac",
+    text: "Altra Experience Wild 2 mi je odmah legla – isprobala sam je i na ravnoj trail stazi i na planinskom terenu. Stabilna i sigurna na neravnoj podlozi, nema žuljeva ni plavih noktiju. Imam široko stopalo i čukljeve, pa su mi ove patike pravo otkriće. Definitivno preporučujem svima sa sličnim tipom stopala.",
+    rating: 5,
+    initials: "TM",
+  },
+  {
+    name: "Joso Šipoš",
+    role: "Rekreativac",
+    text: "Nike Zoom Fly 6 – veličina odgovara, na asfaltu lepo amortizuje udarac i čuva zglobove. Posle dužeg trčanja noge su manje umorne i ne osećam nikakve tegobe. Preporučujem svakome ko trči na duže staze i drži tempo. Savet pre kupovine mi je izuzetno pomogao u izboru pravog broja.",
+    rating: 5,
+    initials: "JŠ",
+  },
+  {
+    name: "Branislav Arsić",
+    role: "Rekreativac",
+    text: "Adidas Adizero EVO SL ATR – udobne, slične kao EVO SL, ali malo kruće. Na asfaltu za neverovati slično kao EVO SL, kramponi se ne osete. Ne kližu se po kiši i snegu. Prvo trčanje 18km bez problema. Preporučujem ih za lošije vremenske uslove, pa i kao all around.",
+    rating: 5,
+    initials: "BA",
+  },
+  {
+    name: "Željko Đukić",
+    role: "Maratonac",
+    text: "Alphafly 3 Next% – patika koja savršeno stoji na nozi, obavija stopalo, napred dovoljno mesta za prste. Savršeno udobna, stabilna i pri skretanju. Posle polumaratonskog trčanja noge su u sasvim dobrom stanju, nema bolova i ne prave žuljeve kao Alphafly 2. Velika preporuka!",
+    rating: 5,
+    initials: "ŽĐ",
+  },
+  {
+    name: "Mihajlo Gojić",
+    role: "Rekreativac dugoprugaš",
+    text: "Nike Invincible Run 3 FK – na prvo korišćenje super odgovarala, oduševio sam se povratnom energijom. Na asfaltu se ponaša dobro, udobnost dolazi do izražaja. Savetujem osobama bez problema sa čukljevima – u tom slučaju je odlična patika.",
+    rating: 5,
+    initials: "MG",
+  },
+  {
+    name: "Jovan Mitić",
+    role: "Kuvar koji trči",
+    text: "Asics Novablast 4 TR savršeno odgovara širem stopalu i već na prvo obuvanje se oseća udobnost. Kramponi se na asfaltu ne osećaju, trk teče glatko i pri većim brzinama. Koristim je i za šetnju – nema nikakve 'težine' tokom i nakon nošenja. Definitivno preporučujem!",
+    rating: 5,
+    initials: "JM",
+  },
+  {
+    name: "Stefan Dovragović",
+    role: "Šabački maratonac",
+    text: "Asics Metaspeed Sky Tokyo – jedna od najboljih patika koje sam koristio do sada. Jako dobra za tvrdu podlogu i ima dobar odziv na većim brzinama. Noge ne trpe jer apsorbuje veliki deo udarca. Za svaku preporuku – vikend pre kupovine istrčan najbrži maraton u njima.",
+    rating: 5,
+    initials: "SD",
+  },
+  {
+    name: "Anđela Aleksandrić",
+    role: "Dugoprugašica",
+    text: "Asics Superblast 2 je svestrana patika – odlična i za long run, brze intervale, tempo i recovery. Nošena na maratonskim i polumaratonskim trkama, odlična responzivnost i oboreni rekordi – bez povreda, žuljeva i bilo kakve nelagodnosti. Definitivno patika za sve preporuke!",
+    rating: 5,
+    initials: "AA",
+  },
+  {
+    name: "Danica Sosa",
+    role: "Rekreativka",
+    text: "Asics GT-1000 13 TR – trčanje po gradu (asfalt/trava/zemlja) je prošlo sjajno, na traci takođe. Nakon trčanja i odmora sve super! Velika preporuka za ovaj model.",
+    rating: 5,
+    initials: "DS",
+  },
+  {
+    name: "Luka Stajić",
+    role: "Brzi maratonac",
+    text: "Adidas Adizero Adios Pro 4 mi je legla kao kec na desetku. Testirao sam je na jakom intervalnom treningu – patika je brza, stabilna, osećao sam se kao da trčim po oblacima. Posle trčanja noge kao da trening uopšte nije bio realizovan. Preporučujem svakome, i rekreativcima i ozbiljnijim atletičarima.",
+    rating: 5,
+    initials: "LS",
+  },
+  {
+    name: "Boško Paunović",
+    role: "Fan Pegasusa",
+    text: "Dugogodišnji sam korisnik Nike Pegasus patika i izbor Pegasus 41 je bio logičan. Neutralni sam trkač većih dimenzija i stabilnost mi je bitna. Mekše su od starijih generacija, ali upper je pojačan pa nema gubitka stabilnosti. Stvorene su za asfalt i stopalo lepo diše u njima.",
+    rating: 5,
+    initials: "BP",
+  },
+  {
+    name: "Igor Andrejević",
+    role: "Novosadski polumaratonac",
+    text: "Saucony Triumph 23 Wide – lepo drži nogu i ima dovoljno prostora za ljude sa širim stopalom. Dobro se ponaša na stazi, ne kliže se kad je mokro – testirano i na snegu! Čak i posle 16km noga nije previše umorna. Preporučujem svima.",
+    rating: 5,
+    initials: "IA",
+  },
+  {
+    name: "Teodora Stepanović",
+    role: "Pronator",
+    text: "Saucony Tempus 2 u potpunosti odgovara mom stopalu i gazištu – daje stabilnost bez osećaja krutosti. Kontakt sa podlogom je kratak i responzivan, kao da nisam ni trčala. Apsolutno preporučujem svima koji su pronatori i traže sigurnu, a laganu stability patiku.",
+    rating: 5,
+    initials: "TS",
+  },
+  {
+    name: "Tanja Stanić",
+    role: "Polumaratonka",
+    text: "Asics Novablast 5 – trčanje kao po oblacima, lagana, udobna i stabilna. Odlična na asfaltu i na stazi, amortizuje udare, nemam težinu u nogama nakon trčanja. U njima sam napravila svoj PB na 5K i 21K. Preporučujem ovaj model za sva trčanja!",
+    rating: 5,
+    initials: "TaS",
+  },
+  {
+    name: "Ljiljana Antonović",
+    role: "Trail trkačica",
+    text: "Hoka Mafate 5 mi je odlično legla. Izuzetno stabilna patika sa širim toe-boxom. Prošla je trail test na svim podlogama – zemlja, blato, rizla, kamenje, šuma. Malo teža od Speedgoat 5, ali nije zamorna. Nakon trčanja noge ostaju odmorne. Svaka preporuka za trail!",
+    rating: 5,
+    initials: "LA",
+  },
   {
     name: "Marko Petrović",
     role: "Rekreativni trkač",
@@ -61,7 +190,14 @@ function StarRating({ count }) {
   );
 }
 
+const PER_PAGE = 9;
+
 export default function TestimonialsSection() {
+  const [page, setPage] = useState(1);
+
+  const totalPages = Math.ceil(testimonials.length / PER_PAGE);
+  const visible = testimonials.slice((page - 1) * PER_PAGE, page * PER_PAGE);
+
   return (
     <section className="py-8 md:py-16 bg-[#3a2d6a] text-white">
       <div className="container mx-auto px-2 md:px-10">
@@ -71,7 +207,7 @@ export default function TestimonialsSection() {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((t, index) => (
+          {visible.map((t, index) => (
             <div
               key={index}
               className="bg-[#e6e0f8] rounded-2xl p-8 flex flex-col relative"
@@ -103,6 +239,40 @@ export default function TestimonialsSection() {
             </div>
           ))}
         </div>
+
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center gap-2 mt-10">
+            <button
+              onClick={() => setPage((p) => Math.max(1, p - 1))}
+              disabled={page === 1}
+              className="px-4 py-2 rounded-lg bg-[#494179] text-white disabled:opacity-30 hover:bg-[#5c5294] transition-colors"
+            >
+              &#8592;
+            </button>
+
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+              <button
+                key={p}
+                onClick={() => setPage(p)}
+                className={`w-10 h-10 rounded-lg font-semibold transition-colors ${
+                  p === page
+                    ? "bg-white text-[#3a2d6a]"
+                    : "bg-[#494179] text-white hover:bg-[#5c5294]"
+                }`}
+              >
+                {p}
+              </button>
+            ))}
+
+            <button
+              onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+              disabled={page === totalPages}
+              className="px-4 py-2 rounded-lg bg-[#494179] text-white disabled:opacity-30 hover:bg-[#5c5294] transition-colors"
+            >
+              &#8594;
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
