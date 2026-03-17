@@ -73,6 +73,8 @@ export default function FeaturesSection() {
       <div className="container mx-auto px-2 md:px-10">
         <SectionHeader
           title="Zašto izabrati Sesame Shop?"
+          titleClassName="text-[#494179]"
+          descriptionClassName="text-[#494179]"
           description="Dugogodišnje iskustvo u prodaji, a još duže u trčanju."
         />
 

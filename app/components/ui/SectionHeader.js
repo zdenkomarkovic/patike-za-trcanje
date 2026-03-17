@@ -5,6 +5,8 @@ export default function SectionHeader({
   subtitle,
   description,
   className = "",
+  titleClassName = "text-white",
+  descriptionClassName = "text-white",
   centered = true,
   ...props
 }) {
@@ -18,12 +20,12 @@ export default function SectionHeader({
           {subtitle}
         </div>
       )}
-      <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+      <h2 className={cn("text-3xl lg:text-4xl font-bold mb-4", titleClassName)}>
         {title}
       </h2>
       {description && (
         <p
-          className={cn("text-xl text-white", centered && "max-w-3xl mx-auto")}
+          className={cn("text-xl", descriptionClassName, centered && "max-w-3xl mx-auto")}
         >
           {description}
         </p>
