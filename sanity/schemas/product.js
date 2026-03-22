@@ -2,6 +2,22 @@ export default {
   name: 'product',
   title: 'Proizvodi',
   type: 'document',
+  orderings: [
+    {
+      title: 'Redosled prikaza (rastući)',
+      name: 'orderAsc',
+      by: [
+        { field: 'order', direction: 'asc' }
+      ]
+    },
+    {
+      title: 'Redosled prikaza (opadajući)',
+      name: 'orderDesc',
+      by: [
+        { field: 'order', direction: 'desc' }
+      ]
+    }
+  ],
   fields: [
     {
       name: 'name',
