@@ -5,6 +5,8 @@ import {
   productsBySubcategoryQuery,
   productsByCategoryCountQuery,
   productsBySubcategoryCountQuery,
+  productsBySubcategoryGroupQuery,
+  productsBySubcategoryGroupCountQuery,
 } from "@/sanity/lib/queries";
 import { getImageUrl } from "@/sanity/lib/image";
 import { notFound } from "next/navigation";
@@ -56,6 +58,19 @@ export default async function CategoryPage({ params, searchParams }) {
         products = [];
         totalProducts = 0;
       }
+    } else if (category.subcategories && category.subcategories.length > 0) {
+      // Category has subcategories — show all products that belong to any of them
+      const subcategoryIds = category.subcategories
+        .filter((sub) => sub.isActive !== false)
+        .map((sub) => sub._id);
+      products = await client.fetch(productsBySubcategoryGroupQuery, {
+        subcategoryIds,
+        offset,
+        limit,
+      });
+      totalProducts = await client.fetch(productsBySubcategoryGroupCountQuery, {
+        subcategoryIds,
+      });
     } else {
       // Show all products in category
       products = await client.fetch(productsByCategoryQuery, {

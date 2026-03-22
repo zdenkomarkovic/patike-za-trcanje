@@ -100,6 +100,40 @@ export const productsByCategoryCountQuery = `
   count(*[_type == "product" && category._ref == $categoryId && inStock == true])
 `
 
+export const productsBySubcategoryGroupQuery = `
+  *[_type == "product" && count(subcategories[@._ref in $subcategoryIds]) > 0 && inStock == true] | order(order asc) [$offset...$limit] {
+    _id,
+    name,
+    brand,
+    slug,
+    shortDescription,
+    category->{
+      _id,
+      name,
+      slug
+    },
+    subcategories[]->{
+      _id,
+      name,
+      slug
+    },
+    images[] {
+      asset->{
+        _id,
+        url
+      },
+      alt
+    },
+    price,
+    featured,
+    inStock
+  }
+`
+
+export const productsBySubcategoryGroupCountQuery = `
+  count(*[_type == "product" && count(subcategories[@._ref in $subcategoryIds]) > 0 && inStock == true])
+`
+
 export const subcategoryBySlugQuery = `
   *[_type == "subcategory" && slug.current == $slug && isActive == true][0] {
     _id,
