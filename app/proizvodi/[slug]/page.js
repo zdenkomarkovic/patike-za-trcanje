@@ -143,7 +143,7 @@ export async function generateStaticParams() {
 }
 
 export const metadata = {
-  title: "Proizvod - Saucony Shop",
+  title: "Proizvod - Sesame Shop",
   description: "Detaljne informacije o proizvodu",
 };
 
