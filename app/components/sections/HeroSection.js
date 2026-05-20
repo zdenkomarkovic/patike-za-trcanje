@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroSection({ title, subtitle, description, image }) {
   return (
@@ -23,8 +24,14 @@ export default function HeroSection({ title, subtitle, description, image }) {
         </div>
 
         {description && (
-          <p className="text-lg md:text-3xl text-white leading-relaxed ">
-            {description}
+          <p className="text-lg md:text-3xl text-white leading-relaxed">
+            {description}{" "}
+            <Link
+              href="/kategorije/brendovi"
+              className="italic font-semibold text-amber-100 hover:text-amber-300 "
+            >
+              ponudu
+            </Link>
           </p>
         )}
 

@@ -16,9 +16,9 @@ export default async function HomePage() {
 
   const heroData = {
     title: "Sesame Shop",
-    subtitle: "Patike za trčanje",
+    subtitle: "Patike za trčanje koje ne nalaziš u domaćim radnjama",
     description:
-      "Profesionalne patike za trčanje za početnike, rekreativce i napredne trkače.",
+      "Za trkače koji žele više od standarda, više modela i boja, po nižim cenama, pogledaj",
     primaryAction: {
       text: "Pogledaj proizvode",
       href: "/proizvodi",
